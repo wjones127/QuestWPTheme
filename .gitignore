@@ -1,0 +1,6 @@
+# Ignore the Swipe directory
+Swipe/
+# Ignore the Emacs tilde files
+*~
+# Ignore the image
+*.jpg

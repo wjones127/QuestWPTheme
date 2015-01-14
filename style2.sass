@@ -1,0 +1,500 @@
+/***************************   COLORS   ****************************/
+$reedred: #5E0501
+$brightred: #AA1913
+$green: #656B0C
+$darkblue: #105591
+$lightblue: #0A60AA
+$gutter: 2rem
+
+/**************************   TYPOGRAPHY   **************************/
+body
+  font-family: Georgia, serif
+  color: rgb(51,51,51)
+  margin: 0
+  //-webkit-font-smoothing: antialiased !important
+  //-moz-osx-font-smoothing: grayscale
+  text-rendering: optimize-legibility
+  font-size: 18px
+  @media screen and (max-width: 767px)
+    font-size: 16px
+a, a:visited
+  color: $lightblue
+
+h1, h2, h3, h4
+  font-family: 'Rufina', Georgia, serif
+  font-weight: bold
+
+h1 a, h2 a, h3 a, h4 a
+  color: inherit
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+  &:active
+    color: $darkblue
+    text-decoration: underline
+article
+  padding: 1rem
+  @media screen and (max-width: 767px)
+    padding: 0
+    .headline
+      font-size: 1.5em
+    .subtitle
+      font-size: 1.1em
+  p
+    line-height: 1.5em
+    
+
+.featured-headline
+  margin: 0.5em 0 0
+  a
+    color: inherit
+
+.headline
+  font-size: 2.2em
+  text-align: center
+
+.subtitle
+  font-size: 1.5em
+  text-align: center
+  font-style: italic
+  font-weight: normal
+
+.center
+  text-align: center
+
+.text-right
+  text-align: right
+
+/***************************   LAYOUT   ****************************/
+.section
+  clear: both
+  padding: 0
+  margin: 0
+
+.main-wrapper
+  background: #eee
+  overflow: auto
+
+.center-container
+  margin: 0 auto
+  padding: 0
+  max-width: 1200px
+
+.left
+  width: 66.66%
+  float: left
+  background: white
+
+.right
+  width: 33.33%
+  float: left
+
+@media screen and (max-width: 767px)
+  .left
+    width: 100%
+  .right
+    display: none
+
+/* Background Colors */
+#featured-news
+  /* style for news stories on front page */
+  $border-width: 0.25
+  border: ($border-width * $gutter) $reedred solid
+  border-left: ($border-width * $gutter) $reedred solid
+  background: white
+  padding: 0
+  margin: 0
+  .story-list
+    padding: 0 ((1-$border-width) * $gutter) 0
+  h3
+    a
+      color: white
+    background: $reedred
+    margin: 0 0 0.5 * $gutter 0
+    padding: 0.75 * $gutter ((1 - $border-width) * $gutter) 0.2 * $gutter
+#featured-letters
+  .story-list
+    h4
+      font-size: 1rem
+    a
+      color: rgb(51,51,51)
+.lightblue
+  background: $lightblue
+  color: white
+.darkblue
+  background: $darkblue
+  color: white
+  a
+    color: white
+.white
+  background: white
+
+.col
+  display: block
+  float: left
+  // 1.5 * 2 = 3 rems for gutter
+  padding: 1rem 2rem 1rem
+  box-sizing: border-box
+  &:first-child
+    // 3 rems for left gutter
+    padding-left: 2rem
+  &:last-child
+    // 3 rems for right gutter
+    padding-right: 2rem
+.group
+  clear: both
+  &:after, &:before
+    content: ""
+    display: table
+  &:after
+    clear: both
+// Widths of the columns out of 12 cols
+.span2
+  width: 16.66%
+.span3
+  width: 25%
+.span4
+  width: 33.33%
+.span5
+  width: 41.66%
+.span6
+  width: 50%
+.span7
+  width: 58.33%
+.span8
+  width: 66.66%
+.span9
+  width: 75%
+.span10
+  width: 83.33%
+.span12
+  width: 100%
+.padded
+  box-sizing: border-box
+  padding: 0 2rem
+@media screen and (max-width: 767px)
+  .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span12
+    width: 100%
+  .col
+    padding: 1rem
+    &:first-child, &:last-child
+      padding: 1rem
+/* Lists of Stories */
+.story-list
+  list-style-type: none
+  margin: 0
+  padding: 0
+  li
+    box-sizing: border-box
+    margin: 0
+    padding: 0.5em 0
+    border-bottom: 1px solid rgb(200,200,200)
+    &:nth-of-type(1)
+      h4
+        font-size: 1.4em
+  h3
+    background: $reedred
+    display: inline-block
+    a
+      color: white
+    text-align: center
+    padding: 0.3rem 0.5rem 0.3rem
+    font-size: 1em
+    margin: 0
+  h4
+    color: $darkblue
+    font-size: 1em
+    padding: 0.1rem 0 0.1rem
+    margin: 0
+  p
+    font-size: 0.9em
+    margin: 0.5em 0
+  .byline
+    font-size: 0.8rem
+
+
+/***************************   HEADER   ****************************/
+
+.header
+  padding: 0.2rem 2rem 0.1rem
+  box-sizing: border-box
+  overflow: auto
+  background: white
+  color: $reedred
+  @media screen and (max-width: 767px)
+    background-color: $reedred
+    margin: 0
+    padding: 0.2rem 0 0
+.mobile-header
+  display: inline-block
+  @media screen and (max-width: 767px)
+    display: block
+    border-bottom: 1px solid rgb(51,51,51)
+    height: 45px
+
+
+
+/* Quest Icon */
+#questQ
+  path
+    fill: $reedred
+  &:hover
+    path
+      fill: $darkblue
+#questQsvg
+  float: left
+
+/* Title of website i.e. The Reed College Quest */
+.title
+  padding: 0.7rem 0.5rem 0
+  font-size: 1.2em
+  display: inline-block
+  margin: 0
+  @media screen and (max-width: 1060px)
+    display: block
+    text-align: center
+    margin: 0 40px 0 40px
+    font-size: 1em
+
+/* The Main Menu */
+.main-menu
+  margin: 0 0 0 2em
+  padding: 0
+  display: inline-block
+  list-style-type: none
+  position: relative
+  font-weight: bold
+  float: none
+  &:hover
+    li
+      opacity: 0.3
+  li
+    display: inline-block
+    padding: 0.5rem 1rem 0.8rem
+    margin: 0
+    opacity: 1
+    transition: opacity 0.2s
+    &:hover
+      opacity: 1
+    a
+      color: inherit
+      text-decoration: none
+/* Mobile editon */
+@media screen and (max-width: 767px)
+  .main-menu
+    margin-left: 0
+    display: block
+    // makes sure floats go ~inside~ the container:
+    overflow: auto 
+    li
+      display: inline-block
+      float: left
+      width: 50%
+      padding: 0
+      margin: 0
+      text-align: center
+      a
+        box-sizing: border-box
+        display: block
+        padding: 1rem
+        width: 100%
+        color: inherit
+        text-decoration: none
+        &:active
+          background: $darkblue
+          color: white
+          box-shadow: inset 2px 2px 10px rgb(200,200,200)
+        &:hover, &:focus
+          background: $darkblue
+          color: white
+        
+/* The Search Box */
+.search-box
+  display: inline-block
+  float: right
+.search-box-input, .search-box-submit
+  margin: 0.5rem 0 0
+  font-size: 0.9em
+  box-sizing: border-box
+.search-box-input
+  padding: 0.2rem 1rem
+  width: 10em
+.search-box-submit
+  width: 5em
+  position: relative
+  padding: 6px 15px
+  left: -8px
+  border: none
+  background: none
+  background-color: $reedred
+  color: white
+  &:hover
+    cursor: pointer
+    background-color: $brightred
+  
+// Override mobile appearance
+input[type='submit']
+  appearance: none
+  border-radius: 0
+
+@media screen and (max-width: 767px)
+  .search-box
+    display: block
+    float: none
+    width: 100%
+    margin: 0.5rem 0 0.5rem
+  .search-box-input
+    width: 65%
+    // Some margin on the left
+    margin: 0 0 0 5%
+  .search-box-submit
+    width: 25%
+    // Some margin on the right
+    margin: 0 5% 0 0
+
+/* Menu icon */
+.mobile
+  @media screen and (min-width: 768px)
+    display: none
+.icon
+  background: none
+  border: none
+  @media screen and (max-width: 767px)
+    display: block
+  float: left
+  position: absolute
+  top: 7px
+  right: 5px
+  path
+    fill: white
+.active-button
+  path
+    fill: $lightblue
+
+.navigation-container
+  max-height: 800px
+  transition: max-height 0.2s
+  margin: 0
+  padding: 0
+  overflow: hidden
+  display: inline
+  @media screen and (max-width: 767px)
+    background: white
+    color: rgb(51,51,51)
+    display: block
+    &.closed
+      max-height: 0
+      transition: max-height 0.2s
+
+/**************************   GALLERY   **************************/
+/* Gallery */
+.gallery-container
+  padding: 1rem 0 2rem
+  background: rgb(10,10,10)
+  color: white
+  width: 100%
+  padding: 0
+  margin: 0
+  overflow: hidden
+  position: relative
+  visbility: hidden
+.featured-gallery
+  background: rgb(10,10,10)
+  display: block
+  margin: 0
+  padding: 0
+  //width: 500%
+  //  max-height: 500px
+  top: 0
+  left: 0
+  //transition: left 2s
+  clear: both
+  position: relative
+  overflow: hidden
+  .slide
+    width: 100%
+    //width: 20%
+    box-sizing: border-box
+    float: left
+    position: relative
+    padding: 0 4rem
+    max-height: 600px
+    overflow: hidden
+  .headline
+    position: absolute
+    bottom: 1em
+    width: calc(100% - 8rem)
+  .headline a
+    display: block
+    text-shadow: 0 1px 0 black
+  img
+    //max-height: 500px
+    width: 100%
+    margin: 0 auto
+  @media screen and (max-width: 767px)
+    .slide
+      padding: 0 1rem
+    .headline
+      width: calc(100% - 2rem)
+      font-size: 1.4em
+// Part that give you current location
+.counter
+  width: 100%
+  padding: 0
+  margin: 0
+  height: 10px
+  clear: both
+  div
+    width: 20%
+    padding: 0
+    margin: 0
+    display: block
+    float: left
+    height: 10px
+    background: $lightblue
+    transition: opacity 0.2s
+    opacity: 0
+    &:hover
+      opacity: 1
+      cursor: pointer
+  .counter-on
+    background: $reedred
+    transition: opacity 0.2s
+    opacity: 1
+    &:hover
+      background: $reedred
+/* positions for the featured images to be in */
+//.fp0
+//  left: 0
+//.fp1
+//  left: 20%
+//.fp2
+//  left: 40%
+//.fp3
+//  left: 60%
+//.fp4
+//  left: 80% 
+/**************************   IMAGES   **************************/
+.full-width
+  width: 100%
+  //max-height: 600px
+  display: block
+  margin: 0 auto
+.image
+  width: 100%
+.caption
+  margin-top: 0.1rem 0 1rem
+  padding: 0 
+  font-size: 0.8em
+
+
+
+
+
+
+
+  
+
+
+
+

@@ -1,0 +1,418 @@
+/***************************************************************
+                               TEST
+***************************************************************/
+.tall {
+    height: 100px;
+}
+.red {background: red;}
+.blue {background: blue;}
+.green {background: green;}
+.orange {background: orange;}
+.purple {background: purple;}
+/***************************************************************
+                               LAYOUT
+***************************************************************/
+.container {
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0;
+    background-color: white;
+    position: relative;
+}
+
+.header {
+    border-bottom: 1px solid rgb(51,51,51);
+    padding: .2em 2em .1em;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.icon {
+    background: none;
+    border: none;
+    display: block;
+    float: left;
+    position: absolute;
+    top: 7px;
+    right: 5px;
+}
+.mobile-header {
+    display: inline-block;
+}
+@media screen and (max-width: 767px) {
+    .header {
+	background-color: white;
+	margin: 0;
+	padding: .2em 0 0em;
+    }
+    .mobile-header {
+	display: block;
+	border-bottom: 1px solid rgb(51,51,51);
+	height: 45px;
+    }
+    .active-button path {
+	fill: #207cca;
+    }
+}
+@media screen and (min-width: 768px) {
+    .mobile {
+	display: none;
+    }
+}
+.gallery-container {
+    padding: 1em 0 2em;
+    background: rgb(10,10,10);
+    color: white;
+}
+
+/* 12 columns system */
+/* sections */
+.section {
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+.main-wrapper {
+    background: #eee;
+    overflow: auto;
+}
+.left {
+    width: 66.66%;
+    float: left;
+    background: white;
+}
+.right {
+    width: 33.33%;
+    float: left;
+}
+@media screen and (max-width: 767px) {
+.left {
+    width: 100%;
+}
+.right {
+    display: none;
+}
+}
+/* columns */
+.col {
+    display: block;
+    float: left;
+    padding: 1% 1.5% 1%;
+    box-sizing: border-box;
+}
+.col:first-child { padding-left: 3%;}
+.col:last-child {padding-right: 3%;}
+/* grouping */
+.group:after, .group:before {
+    content: "";
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+.group {
+    clear:both;
+}
+/* col widths */
+.span2 { width: 16.66%;}
+.span3 { width: 25%;}
+.span4 { width: 33.33%;}
+.span6 { width: 50%;}
+.span8 { width: 66.66%;}
+.span9 { width: 75%;}
+.span10 { width: 83.33%;}
+.span12 { width: 100%}
+.padded {
+    box-sizing: border-box;
+    padding: 0 2em;
+}
+@media screen and (max-width: 767px) {
+.span2, .span3, .span4, .span6, .span8, .span9, .span10, .span12 {
+    width: 100%;
+}
+
+}
+
+
+/**************************************************************
+                               MENUS
+**************************************************************/
+.main-menu {
+    margin: 0 0 0 2em;
+    padding: 0;
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    font-weight: bold;
+    float: none;
+}
+.main-menu > li {
+    display: inline-block;
+    padding: 0.5em 1em 0.8em;
+    margin: 0;
+}
+.main-menu > li a {
+    color: inherit;
+    text-decoration: none;
+}
+.main-menu > li a:hover, .main-menu > li a:active {
+    color: #207cca;
+    text-decoration: underline;
+}
+@media screen and (max-width: 767px) {
+    .main-menu {
+/*	position: relative; */
+	margin-left: 0;
+	display: block;
+	overflow: auto;
+/*	transition: 2s top;*/
+    }
+/*    .main-menu.closed > li {
+	display: none;
+    }*/
+    .main-menu > li {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+    }
+    .main-menu > li a {
+	box-sizing: border-box;
+	display: block;
+	padding: 1em;
+	width: 100%;
+	color: inherit;
+	text-decoration: none;
+}
+    .main-menu > li a:active {
+	background: rgb(240,240,240);
+	box-shadow: inset 2px 2px 10px rgb(200,200,200);
+}
+    .main-menu > li a:hover, .main-menu > li a:focus {
+	background: rgb(240,240,240);
+}
+}
+.button, .button a {
+    text-decoration: none;
+    color: #333;
+}
+.button:hover, .button:hover a {
+    text-decoration: underline;
+}
+
+
+
+/* Lists of stories */
+.story-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.story-list > li {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5em;
+    border-bottom: 1px solid rgb(100,100,100);
+}
+.story-list h3 {
+    background: rgb(51,51,51);
+    color: white;
+    text-align: center;
+    padding: 0.2em 0 0.2em;
+    font-size: 1.5em;
+    margin: 0;
+}
+.story-list h4 {
+    font-size: 1.3em;
+    padding: 0.1em 0 0.1em;
+    margin: 0;
+}
+
+/* Search box */
+.search-box{
+    display: inline-block;
+    float: right;
+}
+.search-box-input, .search-box-submit {
+    margin: 0.5em 0 0;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+.search-box-input {
+    padding: 0.2em 1em;
+}
+.search-box-submit {
+    position:relative;
+    padding:6px 15px;
+    left:-8px;
+    border:none;
+    background: none;
+    background-color:#207cca;
+    color:#fafafa;
+}
+/* Fix to override styling on mobile */
+input[type='submit']
+{
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;  
+   border-radius: 0;
+}
+@media screen and (max-width: 767px) {
+    .search-box {
+	display: block;
+	float: none;
+	width: 100%;
+	margin: 0.5em 0 0.5em;
+    }
+/*    .closed {
+	position: relative;
+	top: -200px;
+	height: 0;
+	margin: 0;
+	transition: top 2s;
+    }*/
+    .search-box-input {
+	width: 65%;
+	margin: 0 0 0 5%;
+    }
+    .search-box-submit {
+	width: 25%;
+	margin: 0 5% 0 0;
+    }
+}
+
+.navigation-container {
+    max-height: 800px;
+    transition: max-height .2s;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline;
+}
+@media screen and (max-width: 767px) {
+    .navigation-container {
+	display: block;
+    }
+    .navigation-container.closed {
+	max-height: 0;
+	transition: max-height .2s;
+    }
+}
+/***************************************************************
+                        QUEST ICON
+***************************************************************/
+#questQ path {
+    color: black;
+}
+#questQ:hover path {
+    fill: red;
+}
+#questQsvg {
+    float:left;
+}
+
+
+/****************************************************************
+                           IMAGES
+****************************************************************/
+.full-width {
+    max-width: 100%;
+    max-height: 600px;
+    display: block;
+    margin: 0 auto;
+}
+.image {
+    width: 100%;
+}
+.caption {
+    margin-top: 0.5em 0 1em;
+}
+
+
+
+
+/****************************************************************
+                          TYPOGRAPHY
+****************************************************************/
+body {
+    font-family: Georgia, serif;
+    color: rgb(51,51,51);
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased !important;
+    margin: 0;
+}
+
+.byline {
+    font-weight: bold;
+    font-style: italic;
+}
+article {
+    padding: 6%;
+}
+article p {
+    font-size: 22px;
+    line-height: 1.5em;
+}
+.featured-headline {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    line-height: 1em;
+}
+.featured-headline a {
+    color: inherit;
+}
+.headline {
+    font-size: 2.2em;
+    text-align: center;
+}
+@media screen and (max-width: 767px) {
+    .headline {
+	font-size: 1.7em;
+    }
+    article p {
+	font-size: 19px;
+    }
+}
+.subtitle {
+    font-size: 1.5em;
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+}
+article:first-cphild:first-letter {
+    font-size: 2em;
+}
+
+.title {
+    color: black;
+    padding: .7em .5em 0;
+    font-size: 1.2em;
+    display: inline-block;
+    margin: 0;
+}
+@media screen and (max-width: 1060px) {
+    .title {
+	display: block;
+	text-align: center;
+	margin: 0 40px 0 40px;
+	font-size: 1em;
+    }
+}
+.center {
+    text-align: center;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+    color: inherit;
+    text-decoration: none;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
+    text-decoration: underline;
+}
+h1 a:active, h2 a:active, h3 a:active, h4 a:active {
+    color: blue;
+    text-decoration: underline;
+}
