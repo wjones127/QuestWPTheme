@@ -13,9 +13,8 @@
 
 
 <div class="section group">
-<div class="center-container">
 <div class="span12 header">
-
+<div class="center-container">
 
 <div class="mobile-header">
 <!-- SVG of Quest Q -->
@@ -58,21 +57,26 @@
 
 <!-- Navigation -->
 <ul class="main-menu">
-  <li><a href="#">News</a></li>
-  <li><a href="#">Letters</a></li>
-  <li><a href="#">Features</a></li>
-  <li><a href="#">Entertainment</a></li>
-  <li><a href="#">Creative</a></li>
+  <li><a href="category.html">News</a></li>
+  <li><a href="category.html">Letters</a></li>
+  <li><a href="category.html">Features</a></li>
+  <li><a href="category.html">Entertainment</a></li>
+  <li><a href="category.html">Creative</a></li>
 </ul>
 
 </div><!-- .navigation container -->
-</div> <!-- end .header -->
 </div> <!-- end .center-container -->
+</div> <!-- end .header -->
+
 
 </div>
 
 
+<!-- ***************************************************************************
+                                  SLIDER GALLERY
+**************************************************************************** -->
 <!--<div class="container">-->
+<div class="center-container">
 <div id="slider" class="gallery-container swipe">
 <div class="featured-gallery swipe-wrap">
 <div class="slide fp0">
@@ -115,11 +119,17 @@
     <img src="march.jpg">
   </a>
 </div>
-</div>
-</div>
-<!--<div class="counter">
+</div><!-- End .featured-gallery -->
+
+<!-- Indicator for where the slider is -->
+<div class="counter">
 <div class="counter-on"></div><div></div><div></div><div></div><div></div>
-</div>-->
+</div>
+
+</div> <!-- End .gallery-container -->
+</div>
+
+
 
 <div class="main-wrapper center-container">
 <!--<div class="left"> Left content -->
@@ -312,12 +322,14 @@
 <!--<script src="main.js"></script>-->
 <script src="Swipe/swipe.js"></script>
 <script>
-counter = document.getElementsByClassName('counter')[0];
-function switchCounter(index) {
-    for (var i = 0; i < counter.children.length; i++) {
-        counter.children[i].className="";
-    };
-    counter.children[index].className = 'counter-on';
+window.counter = {
+    element: document.getElementsByClassName('counter')[0],
+    switchCounter: function(index) {
+        for (var i=0; i<window.counter.element.children.length; i++) {
+            window.counter.element.children[i].className="";
+        }
+        window.counter.element.children[index].className='counter-on';
+    },
 };
 
 window.mySwipe = new Swipe(document.getElementById('slider'), {
@@ -328,22 +340,27 @@ window.mySwipe = new Swipe(document.getElementById('slider'), {
   disableScroll: false,
   stopPropagation: false,
   callback: function(index, elem) {
-    switchCounter(index);
+    window.counter.switchCounter(index);
   },
   transitionEnd: function(index, elem) {}
 });
 
-function goTo(index) {
+window.counter.goTo = function(index) {
     window.mySwipe.stop();
-    switchCounter(index);
+    window.counter.switchCounter(index);
     window.mySwipe.slide(index, 400);
 };
 
-counter.children[0].click(function() { goTo(0); })
-counter.children[1].click(function() { goTo(1); })
-counter.children[2].click(function() { goTo(2); })
-counter.children[3].click(function() { goTo(3); })
-counter.children[4].click(function() { goTo(4); })
+
+for (var i=0; i<5; i++) {
+    console.log(i);
+    element = window.counter.element.children[i];
+    console.log(element);
+    element.id = i
+    element.addEventListener("click", function() {
+        window.counter.goTo(this.id);
+    });
+};
 </script>
 
 

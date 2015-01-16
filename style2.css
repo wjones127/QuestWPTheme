@@ -3,7 +3,9 @@
 body {
   font-family: Georgia, serif;
   color: #333333;
+  background: #5e0501;
   margin: 0;
+  margin-top: 80px;
   text-rendering: optimize-legibility;
   font-size: 18px; }
   @media screen and (max-width: 767px) {
@@ -92,24 +94,23 @@ article {
 /* Background Colors */
 #featured-news {
   /* style for news stories on front page */
-  border: 0.5rem #5e0501 solid;
-  border-left: 0.5rem #5e0501 solid;
+  border: 0.5rem #105591 solid;
+  border-left: 0.5rem #105591 solid;
   background: white;
   padding: 0;
   margin: 0; }
   #featured-news .story-list {
     padding: 0 1.5rem 0; }
   #featured-news h3 {
-    background: #5e0501;
+    background: #105591;
     margin: 0 0 1rem 0;
     padding: 1.5rem 1.5rem 0.4rem; }
     #featured-news h3 a {
-      color: white; }
+      color: white;
+      font-size: 1.2em; }
 
 #featured-letters .story-list h4 {
   font-size: 1rem; }
-#featured-letters .story-list a {
-  color: #333333; }
 
 .lightblue {
   background: #0a60aa;
@@ -221,8 +222,12 @@ article {
   padding: 0.2rem 2rem 0.1rem;
   box-sizing: border-box;
   overflow: auto;
-  background: white;
-  color: #5e0501; }
+  background: #5e0501;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed; }
   @media screen and (max-width: 767px) {
     .header {
       background-color: #5e0501;
@@ -239,9 +244,9 @@ article {
 
 /* Quest Icon */
 #questQ path {
-  fill: #5e0501; }
+  fill: white; }
 #questQ:hover path {
-  fill: #105591; }
+  cursor: pointer; }
 
 #questQsvg {
   float: left; }
@@ -324,14 +329,15 @@ article {
   width: 10em; }
 
 .search-box-submit {
+  display: hidden;
   width: 5em;
   position: relative;
   padding: 6px 15px;
   left: -8px;
   border: none;
   background: none;
-  background-color: #5e0501;
-  color: white; }
+  background-color: white;
+  color: #5e0501; }
   .search-box-submit:hover {
     cursor: pointer;
     background-color: #aa1913; }
@@ -419,13 +425,13 @@ input[type='submit'] {
     box-sizing: border-box;
     float: left;
     position: relative;
-    padding: 0 4rem;
+    padding: 0;
     max-height: 600px;
     overflow: hidden; }
   .featured-gallery .headline {
     position: absolute;
     bottom: 1em;
-    width: calc(100% - 8rem); }
+    width: 100%; }
   .featured-gallery .headline a {
     display: block;
     text-shadow: 0 1px 0 black; }
@@ -440,21 +446,23 @@ input[type='submit'] {
       font-size: 1.4em; } }
 
 .counter {
-  width: 100%;
+  width: 170px;
+  position: relative;
+  top: -30px;
   padding: 0;
-  margin: 0;
-  height: 10px;
+  margin: 0 auto;
+  height: 0;
   clear: both; }
   .counter div {
-    width: 20%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
     padding: 0;
-    margin: 0;
-    display: block;
-    float: left;
-    height: 10px;
-    background: #0a60aa;
+    margin: 10px 10px;
+    display: inline-block;
+    background: white;
     transition: opacity 0.2s;
-    opacity: 0; }
+    opacity: 0.8; }
     .counter div:hover {
       opacity: 1;
       cursor: pointer; }
