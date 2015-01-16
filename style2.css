@@ -317,7 +317,8 @@ article {
 /* The Search Box */
 .search-box {
   display: inline-block;
-  float: right; }
+  float: right;
+  position: relative; }
 
 .search-box-input, .search-box-submit {
   margin: 0.5rem 0 0;
@@ -325,8 +326,14 @@ article {
   box-sizing: border-box; }
 
 .search-box-input {
-  padding: 0.2rem 1rem;
-  width: 10em; }
+  padding: 0.4rem 1rem 0.4rem 1.75em;
+  width: 10em;
+  transition: width 0.2s;
+  border-radius: 2px;
+  border: none;
+  color: #5e0501; }
+  .search-box-input:focus {
+    width: 15em; }
 
 .search-box-submit {
   display: hidden;
@@ -341,6 +348,13 @@ article {
   .search-box-submit:hover {
     cursor: pointer;
     background-color: #aa1913; }
+
+#search-icon {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.2rem; }
+  #search-icon path {
+    fill: #5e0501; }
 
 input[type='submit'] {
   appearance: none;
