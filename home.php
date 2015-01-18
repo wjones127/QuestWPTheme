@@ -50,7 +50,7 @@ $news = array(
     'post__not_in' => $do_not_duplicate,
     'posts_per_page' => 5,
     'category_name' => news,
-)
+);
 query_posts($news);
 if (have_posts()) :
 $post = $posts[0]; $c = 0;
@@ -75,15 +75,17 @@ if ( $c == 1) :
     <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
     <?php the_excerpt(); ?>
 </li>
-<?php else; ?>
+<?php else : ?>
 <li class="story">
     <h4><a href="<?php echo the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
     <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
 </li>
-<?php endif;
-endwhile; ?>
+<?php 
+endif;
+endwhile;
+endif; ?>
 
 
 
