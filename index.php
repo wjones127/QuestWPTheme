@@ -15,11 +15,9 @@
 <p class="caption"></p>
 -->
 <?php echo the_content(); ?>
-
-
-
-
 </article>
+<?php endwhile; endif; ?>
+
 </div>
 </div> <!-- End left content container -->
 <div class="right">
@@ -28,4 +26,4 @@
 </div>
 </div>
 
-<?php endwhile; endif; get_footer(); ?>
+<?php get_footer(); ?>
