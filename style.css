@@ -1,52 +1,516 @@
-/*
-Syntax error: Invalid CSS after "...e Quest website": expected expression (e.g. 1px, bold), was "."
-        on line 6 of style.sass
+/* Theme Name: Quest WP Theme
+ * Theme URI: 
+ * Author: Will Jones
+ * Author URI: 
+ * Description: Custom theme for the Quest website.
+ * Version: 0.1
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Tags: responsive, newspaper, 
+ * Text Domain: questwptheme
+ *
+ * This theme, like WordPress, is licensed under the GPL.
+ * Use it to make something cool, have fun, and share what you've learned with others. */
+/**************************   COLORS   *************************** */
+/*************************   TYPOGRAPHY   ************************* */
+body {
+  font-family: Georgia, serif;
+  color: #333333;
+  background: #5e0501;
+  margin: 0;
+  margin-top: 80px;
+  text-rendering: optimize-legibility;
+  font-size: 18px; }
+  @media screen and (max-width: 767px) {
+    body {
+      font-size: 16px; } }
 
-1: /*
-2: Theme Name: Quest WP Theme
-3: Theme URI: 
-4: Author: Will Jones
-5: Author URI: 
-6: Description: Custom theme for the Quest website.
-7: Version: 0.1
-8: License: GNU General Public License v2 or later
-9: License URI: http://www.gnu.org/licenses/gpl-2.0.html
-10: Tags: responsive, newspaper, 
-11: Text Domain: questwptheme
+a, a:visited {
+  color: #0a60aa; }
 
-Backtrace:
-style.sass:6
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:1147:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/script/lexer.rb:199:in `expected!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/script/parser.rb:486:in `assert_done'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/script/parser.rb:50:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/script/parser.rb:166:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/script.rb:31:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:880:in `parse_script'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:608:in `parse_property'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:597:in `parse_property_or_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:578:in `parse_line'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:471:in `build_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:490:in `block in append_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:489:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:489:in `append_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:345:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:315:in `_render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/engine.rb:262:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:201:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/plugin/compiler.rb:283:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/vendor/listen/lib/listen/multi_listener.rb:108:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/vendor/listen/lib/listen/multi_listener.rb:108:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/vendor/listen/lib/listen/multi_listener.rb:117:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/vendor/listen/lib/listen/adapter.rb:198:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/vendor/listen/lib/listen/adapter.rb:198:in `report_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/vendor/listen/lib/listen/adapter.rb:210:in `poll_changed_dirs'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/vendor/listen/lib/listen/adapters/darwin.rb:38:in `block in start'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...e Quest website\": expected expression (e.g. 1px, bold), was \".\"\A         on line 6 of style.sass\A \A 1: /*\A 2: Theme Name: Quest WP Theme\A 3: Theme URI: \A 4: Author: Will Jones\A 5: Author URI: \A 6: Description: Custom theme for the Quest website.\A 7: Version: 0.1\A 8: License: GNU General Public License v2 or later\A 9: License URI: http://www.gnu.org/licenses/gpl-2.0.html\A 10: Tags: responsive, newspaper, \A 11: Text Domain: questwptheme"; }
+h1, h2, h3, h4 {
+  font-family: "Domine", "Rufina", Georgia, serif;
+  font-weight: bold; }
+
+h1 a, h2 a, h3 a, h4 a {
+  color: inherit;
+  text-decoration: none; }
+  h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
+    text-decoration: underline; }
+  h1 a:active, h2 a:active, h3 a:active, h4 a:active {
+    color: #105591;
+    text-decoration: underline; }
+
+article {
+  padding: 1rem; }
+  @media screen and (max-width: 767px) {
+    article {
+      padding: 0; }
+      article .headline {
+        font-size: 1.5em; }
+      article .subtitle {
+        font-size: 1.1em; } }
+  article p {
+    line-height: 1.5em; }
+
+.featured-headline {
+  margin: 0.5em 0 0; }
+  .featured-headline a {
+    color: inherit; }
+
+.headline {
+  font-size: 2.2em;
+  text-align: center; }
+
+.subtitle {
+  font-size: 1.5em;
+  text-align: center;
+  font-style: italic;
+  font-weight: normal; }
+
+.center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+/**************************   LAYOUT   *************************** */
+.section {
+  clear: both;
+  padding: 0;
+  margin: 0; }
+
+.main-wrapper {
+  background: #eeeeee;
+  overflow: auto; }
+
+.center-container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px; }
+
+.left {
+  width: 66.66%;
+  float: left;
+  background: white; }
+
+.right {
+  width: 33.33%;
+  float: left; }
+
+@media screen and (max-width: 767px) {
+  .left {
+    width: 100%; }
+
+  .right {
+    display: none; } }
+/* Background Colors */
+#featured-news {
+  /* style for news stories on front page */
+  border: 0.5rem #105591 solid;
+  border-left: 0.5rem #105591 solid;
+  background: white;
+  padding: 0;
+  margin: 0; }
+  #featured-news .story-list {
+    padding: 0 1.5rem 0; }
+  #featured-news h3 {
+    background: #105591;
+    margin: 0 0 1rem 0;
+    padding: 1.5rem 1.5rem 0.4rem; }
+    #featured-news h3 a {
+      color: white;
+      font-size: 1.2em; }
+
+#featured-letters .story-list h4 {
+  font-size: 1rem; }
+
+.lightblue {
+  background: #0a60aa;
+  color: white; }
+
+.darkblue {
+  background: #105591;
+  color: white; }
+  .darkblue a {
+    color: white; }
+
+.white {
+  background: white; }
+
+.col {
+  display: block;
+  float: left;
+  padding: 1rem 2rem 1rem;
+  box-sizing: border-box; }
+  .col:first-child {
+    padding-left: 2rem; }
+  .col:last-child {
+    padding-right: 2rem; }
+
+.group {
+  clear: both; }
+  .group:after, .group:before {
+    content: "";
+    display: table; }
+  .group:after {
+    clear: both; }
+
+.span2 {
+  width: 16.66%; }
+
+.span3 {
+  width: 25%; }
+
+.span4 {
+  width: 33.33%; }
+
+.span5 {
+  width: 41.66%; }
+
+.span6 {
+  width: 50%; }
+
+.span7 {
+  width: 58.33%; }
+
+.span8 {
+  width: 66.66%; }
+
+.span9 {
+  width: 75%; }
+
+.span10 {
+  width: 83.33%; }
+
+.span12 {
+  width: 100%; }
+
+.padded {
+  box-sizing: border-box;
+  padding: 0 2rem; }
+
+@media screen and (max-width: 767px) {
+  .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span12 {
+    width: 100%; }
+
+  .col {
+    padding: 1rem; }
+    .col:first-child, .col:last-child {
+      padding: 1rem; } }
+/* Lists of Stories */
+.story-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .story-list li {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5em 0;
+    border-bottom: 1px solid #c8c8c8; }
+    .story-list li:nth-of-type(1) h4 {
+      font-size: 1.4em; }
+  .story-list h3 {
+    background: #5e0501;
+    display: inline-block;
+    text-align: center;
+    padding: 0.3rem 0.5rem 0.3rem;
+    font-size: 1em;
+    margin: 0; }
+    .story-list h3 a {
+      color: white; }
+  .story-list h4 {
+    color: #105591;
+    font-size: 1em;
+    padding: 0.1rem 0 0.1rem;
+    margin: 0; }
+  .story-list p {
+    font-size: 0.9em;
+    margin: 0.5em 0; }
+  .story-list .byline {
+    font-size: 0.8rem; }
+
+/**************************   HEADER   *************************** */
+.header {
+  padding: 0.2rem 2rem 0.1rem;
+  box-sizing: border-box;
+  overflow: auto;
+  background: #5e0501;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed; }
+  @media screen and (max-width: 767px) {
+    .header {
+      background-color: #5e0501;
+      margin: 0;
+      padding: 0.2rem 0 0; } }
+
+.mobile-header {
+  display: inline-block; }
+  @media screen and (max-width: 767px) {
+    .mobile-header {
+      display: block;
+      border-bottom: 1px solid #333333;
+      height: 45px; } }
+
+/* Quest Icon */
+#questQ path {
+  fill: white; }
+#questQ:hover path {
+  cursor: pointer; }
+
+#questQsvg {
+  float: left; }
+
+/* Title of website i.e. The Reed College Quest */
+.title {
+  padding: 0.7rem 0.5rem 0;
+  font-size: 1.2em;
+  display: inline-block;
+  margin: 0; }
+  @media screen and (max-width: 1060px) {
+    .title {
+      display: block;
+      text-align: center;
+      margin: 0 40px 0 40px;
+      font-size: 1em; } }
+
+/* The Main Menu */
+.main-menu {
+  margin: 0 0 0 2em;
+  padding: 0;
+  display: inline-block;
+  list-style-type: none;
+  position: relative;
+  font-weight: bold;
+  float: none; }
+  .main-menu:hover li {
+    opacity: 0.3; }
+  .main-menu li {
+    display: inline-block;
+    padding: 0.5rem 1rem 0.8rem;
+    margin: 0;
+    opacity: 1;
+    transition: opacity 0.2s; }
+    .main-menu li:hover {
+      opacity: 1; }
+    .main-menu li a {
+      color: inherit;
+      text-decoration: none; }
+
+/* Mobile editon */
+@media screen and (max-width: 767px) {
+  .main-menu {
+    margin-left: 0;
+    display: block;
+    overflow: auto; }
+    .main-menu li {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      padding: 0;
+      margin: 0;
+      text-align: center; }
+      .main-menu li a {
+        box-sizing: border-box;
+        display: block;
+        padding: 1rem;
+        width: 100%;
+        color: inherit;
+        text-decoration: none; }
+        .main-menu li a:active {
+          background: #105591;
+          color: white;
+          box-shadow: inset 2px 2px 10px #c8c8c8; }
+        .main-menu li a:hover, .main-menu li a:focus {
+          background: #105591;
+          color: white; } }
+/* The Search Box */
+.search-box {
+  display: inline-block;
+  float: right;
+  position: relative; }
+
+.search-box-input, .search-box-submit {
+  margin: 0.5rem 0 0;
+  font-size: 0.9em;
+  box-sizing: border-box; }
+
+.search-box-input {
+  padding: 0.4rem 1rem 0.4rem 1.75em;
+  width: 10em;
+  transition: width 0.2s ease;
+  border-radius: 2px;
+  border: none;
+  color: #5e0501; }
+  .search-box-input:focus {
+    width: 15em; }
+
+.search-box-submit {
+  display: hidden;
+  width: 5em;
+  position: relative;
+  padding: 6px 15px;
+  left: -8px;
+  border: none;
+  background: none;
+  background-color: white;
+  color: #5e0501; }
+  .search-box-submit:hover {
+    cursor: pointer;
+    background-color: #aa1913; }
+
+#search-icon {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.2rem; }
+  #search-icon path {
+    fill: #5e0501; }
+
+input[type='submit'] {
+  appearance: none;
+  border-radius: 0; }
+
+@media screen and (max-width: 767px) {
+  .search-box {
+    display: block;
+    float: none;
+    width: 100%;
+    margin: 0.5rem 0 0.5rem; }
+
+  .search-box-input {
+    width: 65%;
+    margin: 0 0 0 5%; }
+
+  .search-box-submit {
+    width: 25%;
+    margin: 0 5% 0 0; } }
+/* Menu icon */
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none; } }
+
+.icon {
+  background: none;
+  border: none;
+  float: left;
+  position: absolute;
+  top: 7px;
+  right: 5px; }
+  @media screen and (max-width: 767px) {
+    .icon {
+      display: block; } }
+  .icon path {
+    fill: white; }
+
+.active-button path {
+  fill: #0a60aa; }
+
+.navigation-container {
+  max-height: 800px;
+  transition: max-height 0.2s;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: inline; }
+  @media screen and (max-width: 767px) {
+    .navigation-container {
+      background: white;
+      color: #333333;
+      display: block; }
+      .navigation-container.closed {
+        max-height: 0;
+        transition: max-height 0.2s; } }
+
+/*************************   GALLERY   ************************* */
+/* Gallery */
+.gallery-container {
+  padding: 1rem 0 2rem;
+  background: #0a0a0a;
+  color: white;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  visbility: hidden; }
+
+.featured-gallery {
+  background: #0a0a0a;
+  display: block;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  clear: both;
+  position: relative;
+  overflow: hidden; }
+  .featured-gallery .slide {
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    padding: 0;
+    max-height: 600px;
+    overflow: hidden; }
+  .featured-gallery .headline {
+    position: absolute;
+    bottom: 1em;
+    width: 100%; }
+  .featured-gallery .headline a {
+    display: block;
+    text-shadow: 0 1px 0 black; }
+  .featured-gallery img {
+    width: 100%;
+    margin: 0 auto; }
+  @media screen and (max-width: 767px) {
+    .featured-gallery .slide {
+      padding: 0 1rem; }
+    .featured-gallery .headline {
+      width: calc(100% - 2rem);
+      font-size: 1.4em; } }
+
+.counter {
+  width: 170px;
+  position: relative;
+  top: -30px;
+  padding: 0;
+  margin: 0 auto;
+  height: 0;
+  clear: both; }
+  .counter div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 10px 10px;
+    display: inline-block;
+    background: white;
+    transition: opacity 0.2s;
+    opacity: 0.8; }
+    .counter div:hover {
+      opacity: 1;
+      cursor: pointer; }
+  .counter .counter-on {
+    background: #5e0501;
+    transition: opacity 0.2s;
+    opacity: 1; }
+    .counter .counter-on:hover {
+      background: #5e0501; }
+
+/* positions for the featured images to be in */
+/*************************   IMAGES   ************************* */
+.full-width {
+  width: 100%;
+  display: block;
+  margin: 0 auto; }
+
+.image {
+  width: 100%; }
+
+.caption {
+  margin-top: 0.1rem 0 1rem;
+  padding: 0;
+  font-size: 0.8em; }
