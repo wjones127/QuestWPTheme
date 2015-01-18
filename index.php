@@ -28,4 +28,4 @@
 </div>
 </div>
 
-<?php get_footer(); ?>
+<?php endwhile; endif; get_footer(); ?>
