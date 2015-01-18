@@ -1,19 +1,21 @@
 /*
-Syntax error: Invalid CSS after "Will Jones ": expected expression (e.g. 1px, bold), was "'16"
-        on line 4 of style.sass
+Syntax error: Invalid CSS after "...e Quest website": expected expression (e.g. 1px, bold), was "."
+        on line 6 of style.sass
 
 1: /*
 2: Theme Name: Quest WP Theme
 3: Theme URI: 
-4: Author: Will Jones '16
+4: Author: Will Jones
 5: Author URI: 
 6: Description: Custom theme for the Quest website.
 7: Version: 0.1
 8: License: GNU General Public License v2 or later
 9: License URI: http://www.gnu.org/licenses/gpl-2.0.html
+10: Tags: responsive, newspaper, 
+11: Text Domain: questwptheme
 
 Backtrace:
-style.sass:4
+style.sass:6
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/scss/parser.rb:1147:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/script/lexer.rb:199:in `expected!'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.2.13/lib/sass/script/parser.rb:486:in `assert_done'
@@ -47,4 +49,4 @@ style.sass:4
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"Will Jones \": expected expression (e.g. 1px, bold), was \"'16\"\A         on line 4 of style.sass\A \A 1: /*\A 2: Theme Name: Quest WP Theme\A 3: Theme URI: \A 4: Author: Will Jones '16\A 5: Author URI: \A 6: Description: Custom theme for the Quest website.\A 7: Version: 0.1\A 8: License: GNU General Public License v2 or later\A 9: License URI: http://www.gnu.org/licenses/gpl-2.0.html"; }
+  content: "Syntax error: Invalid CSS after \"...e Quest website\": expected expression (e.g. 1px, bold), was \".\"\A         on line 6 of style.sass\A \A 1: /*\A 2: Theme Name: Quest WP Theme\A 3: Theme URI: \A 4: Author: Will Jones\A 5: Author URI: \A 6: Description: Custom theme for the Quest website.\A 7: Version: 0.1\A 8: License: GNU General Public License v2 or later\A 9: License URI: http://www.gnu.org/licenses/gpl-2.0.html\A 10: Tags: responsive, newspaper, \A 11: Text Domain: questwptheme"; }
