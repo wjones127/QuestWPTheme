@@ -1,11 +1,11 @@
 /**************************   COLORS   *************************** */
 /*************************   TYPOGRAPHY   ************************* */
 body {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, serif;
   color: #333333;
+  background: #5e0501;
   margin: 0;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale;
+  margin-top: 80px;
   text-rendering: optimize-legibility;
   font-size: 18px; }
   @media screen and (max-width: 767px) {
@@ -14,6 +14,10 @@ body {
 
 a, a:visited {
   color: #0a60aa; }
+
+h1, h2, h3, h4 {
+  font-family: "Domine", "Rufina", Georgia, serif;
+  font-weight: bold; }
 
 h1 a, h2 a, h3 a, h4 a {
   color: inherit;
@@ -67,6 +71,11 @@ article {
   background: #eeeeee;
   overflow: auto; }
 
+.center-container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px; }
+
 .left {
   width: 66.66%;
   float: left;
@@ -83,9 +92,25 @@ article {
   .right {
     display: none; } }
 /* Background Colors */
-.reedred {
-  background: #5e0501;
-  color: white; }
+#featured-news {
+  /* style for news stories on front page */
+  border: 0.5rem #105591 solid;
+  border-left: 0.5rem #105591 solid;
+  background: white;
+  padding: 0;
+  margin: 0; }
+  #featured-news .story-list {
+    padding: 0 1.5rem 0; }
+  #featured-news h3 {
+    background: #105591;
+    margin: 0 0 1rem 0;
+    padding: 1.5rem 1.5rem 0.4rem; }
+    #featured-news h3 a {
+      color: white;
+      font-size: 1.2em; }
+
+#featured-letters .story-list h4 {
+  font-size: 1rem; }
 
 .lightblue {
   background: #0a60aa;
@@ -106,9 +131,9 @@ article {
   padding: 1rem 2rem 1rem;
   box-sizing: border-box; }
   .col:first-child {
-    padding-left: 4rem; }
+    padding-left: 2rem; }
   .col:last-child {
-    padding-right: 4rem; }
+    padding-right: 2rem; }
 
 .group {
   clear: both; }
@@ -189,15 +214,20 @@ article {
   .story-list p {
     font-size: 0.9em;
     margin: 0.5em 0; }
+  .story-list .byline {
+    font-size: 0.8rem; }
 
 /**************************   HEADER   *************************** */
 .header {
-  border-bottom: 1px solid #333333;
   padding: 0.2rem 2rem 0.1rem;
   box-sizing: border-box;
   overflow: auto;
   background: #5e0501;
-  color: white; }
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed; }
   @media screen and (max-width: 767px) {
     .header {
       background-color: #5e0501;
@@ -216,7 +246,7 @@ article {
 #questQ path {
   fill: white; }
 #questQ:hover path {
-  fill: #105591; }
+  cursor: pointer; }
 
 #questQsvg {
   float: left; }
@@ -243,16 +273,19 @@ article {
   position: relative;
   font-weight: bold;
   float: none; }
+  .main-menu:hover li {
+    opacity: 0.3; }
   .main-menu li {
     display: inline-block;
     padding: 0.5rem 1rem 0.8rem;
-    margin: 0; }
+    margin: 0;
+    opacity: 1;
+    transition: opacity 0.2s; }
+    .main-menu li:hover {
+      opacity: 1; }
     .main-menu li a {
       color: inherit;
       text-decoration: none; }
-      .main-menu li a:hover, .main-menu li a:active {
-        color: #105591;
-        text-decoration: underline; }
 
 /* Mobile editon */
 @media screen and (max-width: 767px) {
@@ -284,7 +317,8 @@ article {
 /* The Search Box */
 .search-box {
   display: inline-block;
-  float: right; }
+  float: right;
+  position: relative; }
 
 .search-box-input, .search-box-submit {
   margin: 0.5rem 0 0;
@@ -292,16 +326,35 @@ article {
   box-sizing: border-box; }
 
 .search-box-input {
-  padding: 0.2rem 1rem; }
+  padding: 0.4rem 1rem 0.4rem 1.75em;
+  width: 10em;
+  transition: width 0.2s ease;
+  border-radius: 2px;
+  border: none;
+  color: #5e0501; }
+  .search-box-input:focus {
+    width: 15em; }
 
 .search-box-submit {
+  display: hidden;
+  width: 5em;
   position: relative;
   padding: 6px 15px;
   left: -8px;
   border: none;
   background: none;
-  background-color: #0a60aa;
-  color: white; }
+  background-color: white;
+  color: #5e0501; }
+  .search-box-submit:hover {
+    cursor: pointer;
+    background-color: #aa1913; }
+
+#search-icon {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.2rem; }
+  #search-icon path {
+    fill: #5e0501; }
 
 input[type='submit'] {
   appearance: none;
@@ -386,13 +439,13 @@ input[type='submit'] {
     box-sizing: border-box;
     float: left;
     position: relative;
-    padding: 0 4rem;
+    padding: 0;
     max-height: 600px;
     overflow: hidden; }
   .featured-gallery .headline {
     position: absolute;
     bottom: 1em;
-    width: calc(100% - 8rem); }
+    width: 100%; }
   .featured-gallery .headline a {
     display: block;
     text-shadow: 0 1px 0 black; }
@@ -407,21 +460,23 @@ input[type='submit'] {
       font-size: 1.4em; } }
 
 .counter {
-  width: 100%;
+  width: 170px;
+  position: relative;
+  top: -30px;
   padding: 0;
-  margin: 0;
-  height: 10px;
+  margin: 0 auto;
+  height: 0;
   clear: both; }
   .counter div {
-    width: 20%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
     padding: 0;
-    margin: 0;
-    display: block;
-    float: left;
-    height: 10px;
-    background: #0a60aa;
+    margin: 10px 10px;
+    display: inline-block;
+    background: white;
     transition: opacity 0.2s;
-    opacity: 0; }
+    opacity: 0.8; }
     .counter div:hover {
       opacity: 1;
       cursor: pointer; }
