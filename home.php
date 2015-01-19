@@ -72,7 +72,9 @@ if ( $c == 1) :
 	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
     <?php the_excerpt(); ?>
 </li>
 <?php else : ?>
@@ -80,12 +82,15 @@ if ( $c == 1) :
     <h4><a href="<?php echo the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
 </li>
 <?php 
 endif;
 endwhile;
 endif; ?>
+</ul>
 
 
 <!-- Features Stories -->
@@ -119,7 +124,9 @@ if ( $c == 1) :
 	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
     <?php the_excerpt(); ?>
 </li>
 <?php else : ?>
@@ -127,13 +134,15 @@ if ( $c == 1) :
     <h4><a href="<?php echo the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
 </li>
 <?php 
 endif;
 endwhile;
 endif; ?>
-
+</ul>
 </div> <!-- End the first column -->
 
 
@@ -172,7 +181,9 @@ if ( $c == 1) :
 	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
     <?php the_excerpt(); ?>
 </li>
 <?php else : ?>
@@ -180,12 +191,15 @@ if ( $c == 1) :
     <h4><a href="<?php echo the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
 </li>
 <?php 
 endif;
 endwhile;
 endif; ?>
+</ul>
 
 </div> <!-- End the second column -->
 
@@ -223,7 +237,9 @@ if ( $c == 1) :
 	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
     <?php the_excerpt(); ?>
 </li>
 <?php else : ?>
@@ -231,13 +247,15 @@ if ( $c == 1) :
     <h4><a href="<?php echo the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
 </li>
 <?php 
 endif;
 endwhile;
 endif; ?>
-
+</ul>
 
 <!-- Creative Stories -->
 <h3><a href="category.html">Creative</a></h3>
@@ -270,7 +288,9 @@ if ( $c == 1) :
 	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
     <?php the_excerpt(); ?>
 </li>
 <?php else : ?>
@@ -278,13 +298,15 @@ if ( $c == 1) :
     <h4><a href="<?php echo the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
-    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <p class="byline">by <?php the_author(); ?> | 
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+    </p>
 </li>
 <?php 
 endif;
 endwhile;
 endif; ?>
-
+</ul>
 </div> <!-- End the third column -->
 
 </div> <!-- .section .group -->
