@@ -69,7 +69,7 @@ if ( $c == 1) :
      $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo '$feat_image' ?>">
+	    <img src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
@@ -88,8 +88,206 @@ endwhile;
 endif; ?>
 
 
+<!-- Features Stories -->
+<h3><a href="category.html">Features</a></h3>
+<ul class="story-list">
+<?php 
+rewind_posts();
+$features = array(
+    'post__not_in' => $do_not_duplicate,
+    'posts_per_page' => 5,
+    'category_name' => features,
+);
+query_posts($features);
+if (have_posts()) :
+$post = $posts[0]; $c = 0;
+while (have_posts()) : the_post();
+# For the first post, have the image, if there is one
+$c++;
+if ( $c == 1) :
+?>
+<li class="story">
+    <h4><a href="<?php echo the_permalink() ?>">
+	<?php echo the_title() ?>
+    </a></h4>
+    <?php
+    # If there is a feature image for the post, show it
+    if ( has_post_thumbnail( $post_id ) ) : 
+     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+    ?>
+	<a href="<?php the_permalink(); ?>">
+	    <img src="<?php echo $feat_image ?>">
+	</a>
+    <?php endif ?>
+    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <?php the_excerpt(); ?>
+</li>
+<?php else : ?>
+<li class="story">
+    <h4><a href="<?php echo the_permalink() ?>">
+	<?php echo the_title() ?>
+    </a></h4>
+    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+</li>
+<?php 
+endif;
+endwhile;
+endif; ?>
+
+</div> <!-- End the first column -->
 
 
+
+
+<div id="featured-letters" class="col span3">
+
+<!-- Letters -->
+<h3><a href="category.html">Letters</a></h3>
+<ul class="story-list">
+<?php 
+rewind_posts();
+$letters = array(
+    'post__not_in' => $do_not_duplicate,
+    'posts_per_page' => 5,
+    'category_name' => opinion,
+);
+query_posts($letters);
+if (have_posts()) :
+$post = $posts[0]; $c = 0;
+while (have_posts()) : the_post();
+# For the first post, have the image, if there is one
+$c++;
+if ( $c == 1) :
+?>
+<li class="story">
+    <h4><a href="<?php echo the_permalink() ?>">
+	<?php echo the_title() ?>
+    </a></h4>
+    <?php
+    # If there is a feature image for the post, show it
+    if ( has_post_thumbnail( $post_id ) ) : 
+     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+    ?>
+	<a href="<?php the_permalink(); ?>">
+	    <img src="<?php echo $feat_image ?>">
+	</a>
+    <?php endif ?>
+    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <?php the_excerpt(); ?>
+</li>
+<?php else : ?>
+<li class="story">
+    <h4><a href="<?php echo the_permalink() ?>">
+	<?php echo the_title() ?>
+    </a></h4>
+    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+</li>
+<?php 
+endif;
+endwhile;
+endif; ?>
+
+</div> <!-- End the second column -->
+
+
+<div class="col span4 white">
+
+<!-- Entertainment Stories -->
+<h3><a href="category.html">Entertainment</a></h3>
+<ul class="story-list">
+<?php 
+rewind_posts();
+$entertainment = array(
+    'post__not_in' => $do_not_duplicate,
+    'posts_per_page' => 5,
+    'category_name' => entertainment,
+);
+query_posts($entertainment);
+if (have_posts()) :
+$post = $posts[0]; $c = 0;
+while (have_posts()) : the_post();
+# For the first post, have the image, if there is one
+$c++;
+if ( $c == 1) :
+?>
+<li class="story">
+    <h4><a href="<?php echo the_permalink() ?>">
+	<?php echo the_title() ?>
+    </a></h4>
+    <?php
+    # If there is a feature image for the post, show it
+    if ( has_post_thumbnail( $post_id ) ) : 
+     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+    ?>
+	<a href="<?php the_permalink(); ?>">
+	    <img src="<?php echo $feat_image ?>">
+	</a>
+    <?php endif ?>
+    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <?php the_excerpt(); ?>
+</li>
+<?php else : ?>
+<li class="story">
+    <h4><a href="<?php echo the_permalink() ?>">
+	<?php echo the_title() ?>
+    </a></h4>
+    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+</li>
+<?php 
+endif;
+endwhile;
+endif; ?>
+
+
+<!-- Creative Stories -->
+<h3><a href="category.html">Creative</a></h3>
+<ul class="story-list">
+<?php 
+rewind_posts();
+$creative = array(
+    'post__not_in' => $do_not_duplicate,
+    'posts_per_page' => 5,
+    'category_name' => creative,
+);
+query_posts($creative);
+if (have_posts()) :
+$post = $posts[0]; $c = 0;
+while (have_posts()) : the_post();
+# For the first post, have the image, if there is one
+$c++;
+if ( $c == 1) :
+?>
+<li class="story">
+    <h4><a href="<?php echo the_permalink() ?>">
+	<?php echo the_title() ?>
+    </a></h4>
+    <?php
+    # If there is a feature image for the post, show it
+    if ( has_post_thumbnail( $post_id ) ) : 
+     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+    ?>
+	<a href="<?php the_permalink(); ?>">
+	    <img src="<?php echo $feat_image ?>">
+	</a>
+    <?php endif ?>
+    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+    <?php the_excerpt(); ?>
+</li>
+<?php else : ?>
+<li class="story">
+    <h4><a href="<?php echo the_permalink() ?>">
+	<?php echo the_title() ?>
+    </a></h4>
+    <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
+</li>
+<?php 
+endif;
+endwhile;
+endif; ?>
+
+</div> <!-- End the third column -->
+
+</div> <!-- .section .group -->
 
 
 
