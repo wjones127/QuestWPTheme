@@ -17,7 +17,7 @@
 	</h2>
 	<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo '$feat_image' ?>">
+	    <img src="<?php echo $feat_image ?>">
 	</a>
     </div>
 <?php 
@@ -69,7 +69,7 @@ if ( $c == 1) :
      $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo $feat_image ?>">
+	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
@@ -116,7 +116,7 @@ if ( $c == 1) :
      $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo $feat_image ?>">
+	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
@@ -169,7 +169,7 @@ if ( $c == 1) :
      $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo $feat_image ?>">
+	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
@@ -220,7 +220,7 @@ if ( $c == 1) :
      $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo $feat_image ?>">
+	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
@@ -267,7 +267,7 @@ if ( $c == 1) :
      $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo $feat_image ?>">
+	    <img class="full-width" src="<?php echo $feat_image ?>">
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | <?php the_date(); ?></p>
