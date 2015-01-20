@@ -15,9 +15,17 @@
 		<?php echo the_title(); ?>
 	    </a>
 	</h2>
-	<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+	<?php 
+	$small = wp_get_attachment_src( get_post_thumbnail_id($post->ID), 'small'); 
+	$medium = wp_get_attachment_src( get_post_thumbnail_id($post->ID), 'medium');
+	$large = wp_get_attachment_src( get_post_thumbnail_id($post->ID), 'large');
+	$alt_text = get_post_meta($post->ID, '_wp_attachment_image_alt', true);
+	?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo $feat_image ?>">
+	    <img src="<?php echo $small ?>"
+		 srcset="<?php echo $medium ?> 720w, <?php echo $large ?> 1200w" 
+		 alt="<?php echo $alt_text ?>">
+	    <!--<img src="<?php echo $feat_image ?>">-->
 	</a>
     </div>
 <?php 

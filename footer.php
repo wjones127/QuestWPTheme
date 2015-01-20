@@ -14,6 +14,15 @@
 </div>
 </body>
 
+
+
+<!-- Scripts for images -->
+<script>
+ // Picture element HTML5 shiv
+ document.createElement( "picture" );
+</script>
+<script src="<?php bloginfo('template_directory'); ?>/js/picturefill.js" async></script>
+
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Rufina:700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>

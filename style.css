@@ -41,6 +41,9 @@ h1 a, h2 a, h3 a, h4 a {
     color: #105591;
     text-decoration: underline; }
 
+img {
+  max-width: 100%; }
+
 article {
   padding: 1rem; }
   @media screen and (max-width: 767px) {
