@@ -1,1 +1,4 @@
-<?php dynamic_sidebar(); ?>
+<?php 
+register_sidebars();
+dynamic_sidebar( 'sidebar'); 
+?>
