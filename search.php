@@ -3,7 +3,6 @@
 <div class="main-wrapper center-container">
 <div class="left"> <!-- Left content -->
 <div class="col span12">
-
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
 <article>
@@ -19,7 +18,7 @@
 </p>-->
 
 
-<?php the_content(); ?>
+<?php the_excerpt(); ?>
 
 </article>
 <?php endwhile; endif; ?>
@@ -31,5 +30,7 @@
 <?php get_sidebar(); ?>
 </div>
 </div>
+
+
 
 <?php get_footer(); ?>
