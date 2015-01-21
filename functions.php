@@ -1,5 +1,5 @@
 <?php
-function responsive_feature_image($id, $class) {
+function responsive_feature_image($id, $class='') {
     $small = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'thumbnail')[0]; 
 	$medium = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'medium')[0];
 	$large = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large')[0];
