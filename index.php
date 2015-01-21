@@ -20,7 +20,7 @@
 </p>
 
 
-<?php echo the_content(); ?>
+<?php the_content(); ?>
 </article>
 <?php endwhile; endif; ?>
 

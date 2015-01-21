@@ -22,6 +22,26 @@
  document.createElement( "picture" );
 </script>
 <script src="<?php bloginfo('template_directory'); ?>/js/picturefill.min.js" async></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+// Now for the stuff relating to the menu bar
+window.menuButton = {
+    switchStates: function() {
+	if ($('#menu-button').hasClass('active-button')) {
+	    $('#menu-button').removeClass('active-button');
+	    $('.navigation-container').addClass('closed');
+	}
+	else {
+	    $('#menu-button').addClass('active-button');
+	    $('.navigation-container').removeClass('closed');
+	}
+    },
+}
+
+$('#menu-button').click(window.menuButton.switchStates);
+</script>
+
 
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Rufina:700' rel='stylesheet' type='text/css'>

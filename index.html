@@ -5,12 +5,11 @@
 <title>The Reed College Quest</title>
 <meta name="description" content="The Free Press of Reed College">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-o<meta charset="UTF-8">
+<meta charset="UTF-8">
 <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="style2.css" >
+<link rel="stylesheet" type="text/css" href="style.css" >
 </head>
 <body>
-
 
 <div class="section group">
 <div class="span12 header">
@@ -326,6 +325,7 @@ o<meta charset="UTF-8">
 
 
 <script src="Swipe/swipe.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 window.counter = {
     element: document.getElementsByClassName('counter')[0],
@@ -358,14 +358,30 @@ window.counter.goTo = function(index) {
 
 
 for (var i=0; i<5; i++) {
-    console.log(i);
     element = window.counter.element.children[i];
-    console.log(element);
     element.id = i
     element.addEventListener("click", function() {
         window.counter.goTo(this.id);
     });
 };
+
+
+
+// Now for the stuff relating to the menu bar
+window.menuButton = {
+    switchStates: function() {
+	if ($('#menu-button').hasClass('active-button')) {
+	    $('#menu-button').removeClass('active-button');
+	    $('.navigation-container').addClass('closed');
+	}
+	else {
+	    $('#menu-button').addClass('active-button');
+	    $('.navigation-container').removeClass('closed');
+	}
+    },
+}
+
+$('#menu-button').click(window.menuButton.switchStates);
 </script>
 
 </body>
