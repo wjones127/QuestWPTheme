@@ -327,17 +327,21 @@ article
         text-decoration: none
         
 /* The Search Box */
-.search-box
-  display: inline-block
-  float: right
-  position: relative
+.header
+  .search-box
+    display: inline-block
+    float: right
+    position: relative
 .search-box-input, .search-box-submit
   margin: 0.5rem 0 0
   font-size: 0.9em
   box-sizing: border-box
+.header
+  .search-box-input
+    width: 10em
 .search-box-input
   padding: 0.4rem 1rem 0.4rem 1.75em 
-  width: 10em
+  width: 80%
   transition: width 0.2s ease
   border-radius: 2px
   border: none

@@ -11,8 +11,8 @@
 
 <li class="story">
 
-<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-<p class="author center"><?php the_author(); ?> |
+<h2 class="headline"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+<p class="byline"><?php the_author(); ?> |
 <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
 </p>
 <!-- Featured image -->
@@ -30,7 +30,7 @@
 
 </ul> <!-- .story-list -->
 
-<?php echo paginate_links(); ?>
+<div class="center"> <?php echo paginate_links(); ?> </div>
 </div>
 </div> <!-- End left content container -->
 <div class="right">
