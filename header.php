@@ -42,7 +42,7 @@
 <div class="navigation-container closed">
 
 
-<?php get_search_form( $echo ); ?>
+<?php get_search_form(); ?>
 <!--<form class="search-box">
 
 <svg version="1.1" id="search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1em" height="1em" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
