@@ -16,15 +16,17 @@
 	    </a>
 	</h2>
 	<?php 
-	$small = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail')[0]; 
-	$medium = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium')[0];
-	$large = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large')[0];
-	$alt_text = get_post_meta($post->ID, '_wp_attachment_image_alt', true);
+	#$small = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail')[0]; 
+	#$medium = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium')[0];
+	#$large = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large')[0];
+	#$alt_text = get_post_meta($post->ID, '_wp_attachment_image_alt', true);
 	?>
 	<a href="<?php the_permalink(); ?>">
-	    <img src="<?php echo $small ?>"
-		 srcset="<?php echo $medium ?> 720w, <?php echo $large ?> 1200w" 
-		 alt="<?php echo $alt_text ?>">
+    <!--<img src="<?php echo $small ?>"
+        sizes="(min-width: 1200px) 1200px, 100%"
+		 srcset="<?php echo $small ?> 480w, <?php echo $medium ?> 720w, <?php echo $large ?> 1200w" 
+		 alt="<?php echo $alt_text ?>">-->
+	    <?php responsive_feature_image($post->ID); ?>
 	    <!--<img src="<?php echo $feat_image ?>">-->
 	</a>
     </div>
@@ -77,7 +79,8 @@ if ( $c == 1) :
      $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img class="full-width" src="<?php echo $feat_image ?>">
+	    <!--<img class="full-width" src="<?php echo $feat_image ?>">-->
+	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | 
@@ -356,9 +359,7 @@ window.counter.goTo = function(index) {
 
 
 for (var i=0; i<5; i++) {
-    console.log(i);
     element = window.counter.element.children[i];
-    console.log(element);
     element.id = i
     element.addEventListener("click", function() {
         window.counter.goTo(this.id);
