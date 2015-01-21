@@ -70,7 +70,7 @@ $c++;
 if ( $c == 1) :
 ?>
 <li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
+    <h4><a href="<?php the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
     <?php
@@ -90,7 +90,7 @@ if ( $c == 1) :
 </li>
 <?php else : ?>
 <li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
+    <h4><a href="<?php the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
     <p class="byline">by <?php the_author(); ?> | 
