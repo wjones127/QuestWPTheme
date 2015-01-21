@@ -345,7 +345,7 @@ article {
 
 .search-box-input {
   padding: 0.4rem 1rem 0.4rem 1.75em;
-  width: 80%;
+  width: 100%;
   transition: width 0.2s ease;
   border-radius: 2px;
   border: 1px solid #969696;
