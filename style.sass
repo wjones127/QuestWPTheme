@@ -332,6 +332,8 @@ article
     display: inline-block
     float: right
     position: relative
+.search-box
+  position: relative
 .search-box-input, .search-box-submit
   margin: 0.5rem 0 0
   font-size: 0.9em
@@ -339,12 +341,15 @@ article
 .header
   .search-box-input
     width: 10em
+    border: none
+    &:focus
+      width: 15em
 .search-box-input
   padding: 0.4rem 1rem 0.4rem 1.75em 
   width: 80%
   transition: width 0.2s ease
   border-radius: 2px
-  border: none
+  border: 1px solid rgb(150,150,150)
   color: $reedred
   &:focus
     width: 15em
