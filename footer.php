@@ -21,7 +21,7 @@
  // Picture element HTML5 shiv
  document.createElement( "picture" );
 </script>
-<script src="<?php bloginfo('template_directory'); ?>/js/picturefill.js" async></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/picturefill.min.js" async></script>
 
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Rufina:700' rel='stylesheet' type='text/css'>

@@ -16,7 +16,7 @@
 	    </a>
 	</h2>
 	<?php 
-	$small = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small'); 
+	$small = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail'); 
 	$medium = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium');
 	$large = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 	$alt_text = get_post_meta($post->ID, '_wp_attachment_image_alt', true);
