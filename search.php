@@ -11,7 +11,7 @@
 
 <li class="story">
 
-<a href="<?php the_permalink() ?>"><h2 class="headline"><?php the_title(); ?></h3></a>
+<h2 class="headline"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 <p class="byline"><?php the_author(); ?> |
 <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
 </p>

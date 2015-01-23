@@ -213,6 +213,16 @@ article {
     border-bottom: 1px solid #c8c8c8; }
     .story-list li:nth-of-type(1) h4 {
       font-size: 1.4em; }
+  .story-list h2.headline {
+    font-size: 1.3em;
+    color: #141414;
+    opacity: 0.8;
+    transition: opacity 2s ease; }
+    .story-list h2.headline a {
+      text-decoration: none;
+      color: inherit; }
+    .story-list h2.headline:hover {
+      opacity: 1; }
   .story-list h3 {
     background: #5e0501;
     display: inline-block;
