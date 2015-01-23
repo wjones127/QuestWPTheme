@@ -13,11 +13,12 @@
 <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
 </p>
 <!-- Featured image -->
-<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
-<img src="<?php echo $feat_image ?>" class="full-width">
-<!--<p class="caption">
-</p>-->
-
+<?php responsive_feature_image($post->ID, 'full-width'); ?>
+<?php if(get_post(get_post_thumbnail_id())->post_excerpt) {
+    echo '<p class="caption">';
+echo get_post(get_post_thumbnail_id())->post_excerpt;
+echo '</p>';
+} ?>
 
 <?php the_content(); ?>
 
