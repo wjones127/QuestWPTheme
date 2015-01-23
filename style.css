@@ -316,8 +316,7 @@ article {
 @media screen and (max-width: 767px) {
   .main-menu {
     margin-left: 0;
-    display: block;
-    overflow: auto; }
+    display: block; }
     .main-menu li {
       display: inline-block;
       float: left;
@@ -388,6 +387,10 @@ input[type='submit'] {
   border-radius: 0; }
 
 @media screen and (max-width: 767px) {
+  .header .search-box {
+    width: 100%;
+    box-sizing: border-box; }
+
   .search-box {
     display: block;
     float: none;
@@ -452,13 +455,9 @@ input[type='submit'] {
   padding: 0;
   margin: 0; }
   .footer ul li {
-    display: inline;
-    padding: 0.5rem 1rem 0.5rem;
+    display: inline-block;
+    padding: 1rem;
     margin: 0; }
-    .footer ul li::before {
-      content: "|"; }
-    .footer ul li:first::before {
-      content: ""; }
 
 /*************************   GALLERY   ************************* */
 /* Gallery */
