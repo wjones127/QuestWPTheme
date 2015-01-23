@@ -10,7 +10,7 @@
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
 	<li class="story">
 	    <h2 class="headline"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-	    <p class="byline"><?php the_author(); ?> |
+	    <p class="byline center"><?php the_author(); ?> |
 		<?php echo human_time_diff( get_the_time('U'), 
 					    current_time('timestamp') ) . ' ago'; ?>
 	    </p>
@@ -19,7 +19,6 @@
 	</li>
     <?php endwhile; endif; ?>
 </ul> <!-- .story-list -->
-
 
 
 </div>
