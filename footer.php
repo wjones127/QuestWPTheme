@@ -2,12 +2,19 @@
 <div class="section group">
 <div class="col span12">
 <!-- Small top Menu -->
-<p class="center">
+<!--<p class="center">
 <a href="#">About</a> | 
 <a href="#">Submissions</a> | 
 <a href="#">Advertise</a> | 
 <a href="#">Contact Us</a>
-</p>
+</p>-->
+<?php 
+if ( has_nav_menu( 'footer' ) ) { 
+    /* if menu location 'primary-menu' exists then use custom menu */
+    wp_nav_menu( array( 'theme_location' => 'footer',
+    'container_class' => 'center') ); 
+} ?>
+
 
 <p class="center">Copyright &copy; 2014 | Theme by Will Jones</p>
 </div>

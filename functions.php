@@ -1,6 +1,13 @@
 <?php
 
 add_theme_support( 'post-thumbnails' ); 
+# Registering the Menus
+function register_menu() {
+    register_nav_menu('main-menu', __('Main Menu'));
+    register_nav_menu('footer', __('Footer'));
+}
+add_action('init', 'register_menu');
+
 
 /**
  * Register Sidebar
