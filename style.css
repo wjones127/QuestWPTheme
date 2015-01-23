@@ -215,9 +215,8 @@ article {
       font-size: 1.4em; }
   .story-list h2.headline {
     font-size: 1.3em;
-    color: #141414;
-    opacity: 0.8;
-    transition: opacity 2s ease; }
+    color: black;
+    opacity: 0.75; }
     .story-list h2.headline a {
       text-decoration: none;
       color: inherit; }
