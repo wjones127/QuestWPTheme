@@ -11,8 +11,7 @@
 <?php 
 if ( has_nav_menu( 'footer' ) ) { 
     /* if menu location 'primary-menu' exists then use custom menu */
-    wp_nav_menu( array( 'theme_location' => 'footer',
-    'container_class' => 'center') ); 
+    wp_nav_menu( array( 'theme_location' => 'footer') ); 
 } ?>
 
 
