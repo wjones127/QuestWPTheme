@@ -5,7 +5,7 @@ add_theme_support( 'post-thumbnails' );
 /**
  * Register Sidebar
  */
-function textdomain_register_sidebars() {
+function quest_register_sidebars() {
 
     /* Register the primary sidebar. */
     register_sidebar(
