@@ -446,6 +446,20 @@ input[type='submit'] {
         max-height: 0;
         transition: max-height 0.2s; } }
 
+/**************************   FOOTER   *************************** */
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  .footer ul li {
+    display: inline;
+    padding: 0.5rem 1rem 0.5rem;
+    margin: 0; }
+    .footer ul li::before {
+      content: "|"; }
+    .footer ul li:first::before {
+      content: ""; }
+
 /*************************   GALLERY   ************************* */
 /* Gallery */
 .gallery-container {
