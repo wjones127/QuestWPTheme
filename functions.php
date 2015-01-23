@@ -26,6 +26,7 @@ add_action( 'widgets_init', 'quest_register_sidebars' );
 
 
 function responsive_feature_image($id, $class='') {
+if ( has_post_thumbnail() ) {
     $small = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'thumbnail')[0]; 
 	$medium = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'medium')[0];
 	$large = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large')[0];
@@ -36,5 +37,5 @@ function responsive_feature_image($id, $class='') {
     echo 'srcset="'.$small.' 480w, '.$medium.' 720w, '.$large.'1200w"';
     echo 'alt="'.$alt_text.'">';
 }
-
+}
 ?>
