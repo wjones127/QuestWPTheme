@@ -388,9 +388,13 @@ input[type='submit']
 
 @media screen and (max-width: 767px)
   .header
+    .search-box:
+      margin: 0
     .search-box-input
       width: 100%
       box-sizing: border-box
+      &:focus
+        width: 100%
   .search-box
     display: block
     float: none
