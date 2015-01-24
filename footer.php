@@ -59,5 +59,6 @@ $('#menu-button').click(window.menuButton.switchStates);
 <link href='http://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Source+Serif+Pro:700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:700' rel='stylesheet' type='text/css'>
 
 </html>
