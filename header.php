@@ -67,7 +67,7 @@
 if (has_nav_menu( 'main-menu' ) ) {
     /* If the main menu exists, then use it */
     wp_nav_menu( array( 'theme_location' => 'main-menu',
-    'menu-class' => 'main-menu',
+    'menu_class' => 'main-menu',
     'depth' => -1,
     ));
 } ?>
