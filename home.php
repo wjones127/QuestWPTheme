@@ -22,12 +22,7 @@
 	#$alt_text = get_post_meta($post->ID, '_wp_attachment_image_alt', true);
 	?>
 	<a href="<?php the_permalink(); ?>">
-    <!--<img src="<?php echo $small ?>"
-        sizes="(min-width: 1200px) 1200px, 100%"
-		 srcset="<?php echo $small ?> 480w, <?php echo $medium ?> 720w, <?php echo $large ?> 1200w" 
-		 alt="<?php echo $alt_text ?>">-->
 	    <?php responsive_feature_image($post->ID); ?>
-	    <!--<img src="<?php echo $feat_image ?>">-->
 	</a>
     </div>
 <?php 
@@ -79,7 +74,6 @@ if ( $c == 1) :
      $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <!--<img class="full-width" src="<?php echo $feat_image ?>">-->
 	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
 	</a>
     <?php endif ?>
@@ -129,10 +123,9 @@ if ( $c == 1) :
     <?php
     # If there is a feature image for the post, show it
     if ( has_post_thumbnail( $post_id ) ) : 
-     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img class="full-width" src="<?php echo $feat_image ?>">
+	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | 
@@ -185,11 +178,9 @@ if ( $c == 1) :
     </a></h4>
     <?php
     # If there is a feature image for the post, show it
-    if ( has_post_thumbnail( $post_id ) ) : 
-     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-    ?>
+    if ( has_post_thumbnail( $post_id ) ) :     ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img class="full-width" src="<?php echo $feat_image ?>">
+	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | 
@@ -241,11 +232,9 @@ if ( $c == 1) :
     </a></h4>
     <?php
     # If there is a feature image for the post, show it
-    if ( has_post_thumbnail( $post_id ) ) : 
-     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-    ?>
+    if ( has_post_thumbnail( $post_id ) ) :   ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img class="full-width" src="<?php echo $feat_image ?>">
+	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | 
@@ -292,11 +281,9 @@ if ( $c == 1) :
     </a></h4>
     <?php
     # If there is a feature image for the post, show it
-    if ( has_post_thumbnail( $post_id ) ) : 
-     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-    ?>
+    if ( has_post_thumbnail( $post_id ) ) :   ?>
 	<a href="<?php the_permalink(); ?>">
-	    <img class="full-width" src="<?php echo $feat_image ?>">
+	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
 	</a>
     <?php endif ?>
     <p class="byline">by <?php the_author(); ?> | 
