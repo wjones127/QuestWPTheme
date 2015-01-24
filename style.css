@@ -243,6 +243,9 @@ article {
     font-size: 0.8rem; }
 
 /**************************   HEADER   *************************** */
+.admin-bar .header {
+  top: 32px; }
+
 .header {
   padding: 0.2rem 2rem 0.1rem;
   box-sizing: border-box;
