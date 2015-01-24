@@ -29,9 +29,6 @@ body
   background: $reedred
   margin: 0
   margin-top: 50px
-  //-webkit-font-smoothing: antialiased !important
-  //-moz-osx-font-smoothing: grayscale
-  text-rendering: optimize-legibility
   font-size: 18px
   @media screen and (max-width: 767px)
     font-size: 16px
@@ -39,8 +36,11 @@ a, a:visited
   color: $lightblue
 
 h1, h2, h3, h4
-  font-family: 'Lora', 'Abril Fatface', 'Domine', 'Rufina', Georgia, serif
+  font-family: 'Lora', Georgia, serif
   font-weight: bold
+  -webkit-font-smoothing: antialiased !important
+  -moz-osx-font-smoothing: grayscale
+  
 
 h1 a, h2 a, h3 a, h4 a
   color: inherit
