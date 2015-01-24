@@ -119,20 +119,20 @@ article
 #featured-news
   /* style for news stories on front page */
   $border-width: 0.25
-  border: ($border-width * $gutter) $darkblue solid
-  border-left: ($border-width * $gutter) $darkblue solid
+  border: ($border-width * $gutter / 2) $darkblue solid
+  border-left: ($border-width * $gutter / 2) $darkblue solid
   background: white
   padding: 0
   margin: 0
   .story-list
-    padding: 0 ((1-$border-width) * $gutter) 0
+    padding: 0 ((1-$border-width) * $gutter / 2) 0
   h3
     a
       color: white
       font-size: 1.2em
     background: $darkblue
-    margin: 0 0 0.5 * $gutter 0
-    padding: 0.75 * $gutter ((1 - $border-width) * $gutter) 0.2 * $gutter
+    margin: 0 0 0.5 * $gutter/2 0
+    padding: 0.75 * $gutter/2  ((1 - $border-width) * $gutter/2) 0.2 * $gutter/2
 #featured-letters
   .story-list
     h4

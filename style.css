@@ -110,17 +110,17 @@ article {
 /* Background Colors */
 #featured-news {
   /* style for news stories on front page */
-  border: 0.5rem #105591 solid;
-  border-left: 0.5rem #105591 solid;
+  border: 0.25rem #105591 solid;
+  border-left: 0.25rem #105591 solid;
   background: white;
   padding: 0;
   margin: 0; }
   #featured-news .story-list {
-    padding: 0 1.5rem 0; }
+    padding: 0 0.75rem 0; }
   #featured-news h3 {
     background: #105591;
-    margin: 0 0 1rem 0;
-    padding: 1.5rem 1.5rem 0.4rem; }
+    margin: 0 0 0.5rem 0;
+    padding: 0.75rem 0.75rem 0.2rem; }
     #featured-news h3 a {
       color: white;
       font-size: 1.2em; }
