@@ -506,7 +506,7 @@ input[type='submit'] {
     margin: 0 auto; }
   @media screen and (max-width: 767px) {
     .featured-gallery .slide {
-      padding: 0 1rem; }
+      padding: 0; }
     .featured-gallery .headline {
       width: calc(100% - 2rem);
       font-size: 1.4em; } }

@@ -55,13 +55,25 @@
 
 
 <!-- Navigation -->
-<ul class="main-menu">
+<!--<ul class="main-menu">
   <li><a href="category.html">News</a></li>
   <li><a href="category.html">Letters</a></li>
   <li><a href="category.html">Features</a></li>
   <li><a href="category.html">Entertainment</a></li>
   <li><a href="category.html">Creative</a></li>
-</ul>
+</ul>-->
+
+<?php
+if (has_nav_menu( 'main-menu' ) ) {
+    /* If the main menu exists, then use it */
+    wp_nav_menu( array( 'theme_location' => 'main-menu',
+    'menu-class' => 'main-menu',
+    'depth' => -1,
+    ));
+} ?>
+
+
+
 
 </div><!-- .navigation container -->
 </div> <!-- end .center-container -->
