@@ -387,13 +387,13 @@ input[type='submit'] {
   border-radius: 0; }
 
 @media screen and (max-width: 767px) {
-  .header {
-    .search-box-margin: 0; }
-    .header .search-box-input {
-      width: 100%;
-      box-sizing: border-box; }
-      .header .search-box-input:focus {
-        width: 100%; }
+  .header .search-box {
+    margin: 0; }
+  .header .search-box-input {
+    width: 100%;
+    box-sizing: border-box; }
+    .header .search-box-input:focus {
+      width: 100%; }
 
   .search-box {
     display: block;
