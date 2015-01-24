@@ -38,7 +38,9 @@ if ( has_post_thumbnail() ) {
 	$medium = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'medium')[0];
 	$large = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large')[0];
 	$alt_text = get_post_meta($id, '_wp_attachment_image_alt', true);
-    echo '<img src="'.$small.'" ';
+    # echo '<img src="'.$small.'" ';
+    # The script will take care of the src
+    echo '<img ';
     echo 'class="'.$class.'" ';
     echo 'sizes="(min-width: 1200) 1200px, 100%" ';
     echo 'srcset="'.$small.' 480w, '.$medium.' 720w, '.$large.'1200w"';
