@@ -9,7 +9,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
 </head>
-<body>
+<?php echo '<body class="'.join(' ', get_body_class()).'">'.PHP_EOL; ?>
 
 
 <div class="section group">
@@ -26,14 +26,20 @@
 <h1 class="title">The Reed College Quest</h1>
 
 <button id="menu-button" class="mobile icon <!--active-button-->">
-<!-- Menu Button -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="30px" height="30px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-<path d="M40,6c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4l0,0c0-2.209,1.791-4,4-4h32C38.209,2,40,3.791,40,6L40,6z"/>
-<path d="M40,20c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4l0,0c0-2.209,1.791-4,4-4h32C38.209,16,40,17.791,40,20L40,20z"/>
-<path d="M40,34c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4l0,0c0-2.209,1.791-4,4-4h32C38.209,30,40,31.791,40,34L40,34z"/>
-</svg>
+    <!-- Menu Button -->
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <svg version="1.1" 
+	 xmlns="http://www.w3.org/2000/svg" 
+	 xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 x="0px" y="0px" 
+	 width="30px" height="30px" 
+	 viewBox="0 0 40 40" 
+	 enable-background="new 0 0 40 40" 
+	 xml:space="preserve">
+	<path d="M40,6c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4l0,0c0-2.209,1.791-4,4-4h32C38.209,2,40,3.791,40,6L40,6z"/>
+	<path d="M40,20c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4l0,0c0-2.209,1.791-4,4-4h32C38.209,16,40,17.791,40,20L40,20z"/>
+	<path d="M40,34c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4l0,0c0-2.209,1.791-4,4-4h32C38.209,30,40,31.791,40,34L40,34z"/>
+    </svg>
 </button>
 
 </div><!-- End .mobile-header -->
@@ -41,28 +47,9 @@
 
 <div class="navigation-container closed">
 
-
 <?php get_search_form(); ?>
-<!--<form class="search-box">
-
-<svg version="1.1" id="search-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1em" height="1em" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-<path d="M22.815,22.707c0,0,0.898,0.876,2.041,0.604c2.627,2.627,0.655,0.655,11.002,11.002l-2.427,2.427c0,0-10.053-10.053-11.002-11.002c0.271-1.143-0.604-2.041-0.604-2.041l-0.346,0.015c-4.054,3.348-10.064,3.125-13.857-0.668c-4.03-4.03-4.03-10.564,0-14.594c4.029-4.03,10.563-4.03,14.593,0c3.812,3.812,4.018,9.863,0.62,13.917L22.815,22.707zM20.478,21.221c3.047-3.046,3.047-7.986,0-11.033c-3.047-3.047-7.987-3.047-11.034,0c-3.047,3.047-3.047,7.987,0,11.034C12.491,24.268,17.431,24.268,20.478,21.221z"/>
-</svg>
-
-<input class="search-box-input" type="text" placeholder="search..." required>-->
-<!--<input class="search-box-submit" type="submit" value="Search">-->
-</form>
-
 
 <!-- Navigation -->
-<!--<ul class="main-menu">
-  <li><a href="category.html">News</a></li>
-  <li><a href="category.html">Letters</a></li>
-  <li><a href="category.html">Features</a></li>
-  <li><a href="category.html">Entertainment</a></li>
-  <li><a href="category.html">Creative</a></li>
-</ul>-->
-
 <?php
 if (has_nav_menu( 'main-menu' ) ) {
     /* If the main menu exists, then use it */

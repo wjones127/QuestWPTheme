@@ -21,6 +21,8 @@ if ( has_nav_menu( 'footer' ) ) {
 <p class="center">Copyright &copy; 2014 | Theme by Will Jones</p>
 </div>
 </div>
+
+<?php wp_footer();?>
 </body>
 
 
