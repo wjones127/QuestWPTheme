@@ -82,7 +82,7 @@ a.page-numbers {
   background: none;
   border: none; }
 
-.page-numbers, a.page-number:hover {
+.page-numbers, a.page-numbers:hover {
   color: #333333;
   padding: 0.2em 0.5em;
   text-decoration: none;
