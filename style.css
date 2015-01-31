@@ -79,12 +79,13 @@ article {
   text-align: right; }
 
 .pagination-container {
-  margin: 1em 0 1em; }
+  margin: 0.6em 0 0.6em; }
 
 .page-numbers, a.page-numbers {
   background: none;
+  display: inline-block;
+  margin: 0.2em 0 0.2em;
   border: none;
-  font-family: "Lora", Georgia, serif;
   color: #646464;
   padding: 0.2em 0.5em;
   font-weight: bold;
