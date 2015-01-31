@@ -78,6 +78,16 @@ article {
 .text-right {
   text-align: right; }
 
+.page-numbers, a.page-numbers {
+  color: #333333;
+  opacity: 0.5;
+  padding: 0.5em;
+  text-decoration: underline;
+  border: 1px solid #333333;
+  border-radius: 2px; }
+  .page-numbers:hover, a.page-numbers:hover {
+    opacity: 1; }
+
 /**************************   LAYOUT   *************************** */
 .section {
   clear: both;
