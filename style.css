@@ -78,18 +78,18 @@ article {
 .text-right {
   text-align: right; }
 
-a.page-numbers {
+.page-numbers {
   background: none;
-  border: none; }
-
-.page-numbers, a.page-numbers:hover {
+  border: none;
   color: #333333;
   padding: 0.2em 0.5em;
-  text-decoration: none;
   font-weight: bold;
-  border: 1px solid #333333;
+  text-decoration: none; }
+
+.page-numbers.current, a.page-numbers:hover {
+  border: 1px solid #e6e6e6;
   border-radius: 2px;
-  background: linear-gradient(white, #969696); }
+  background: linear-gradient(white, #f0f0f0); }
 
 /**************************   LAYOUT   *************************** */
 .section {
