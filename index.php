@@ -5,7 +5,7 @@
 <div class="left"> <!-- Left content -->
 <div class="col span12">
 
-<div class="center"> <?php echo paginate_links(); ?> </div>
+<div class="pagination-container center"> <?php echo paginate_links(); ?> </div>
 
 <ul class="story-list">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -21,7 +21,7 @@
     <?php endwhile; endif; ?>
 </ul> <!-- .story-list -->
 
-<div class="center"> <?php echo paginate_links(); ?> </div>
+<div class="pagination-container center"> <?php echo paginate_links(); ?> </div>
 
 </div>
 </div> <!-- End left content container -->

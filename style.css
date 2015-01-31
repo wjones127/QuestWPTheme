@@ -78,20 +78,27 @@ article {
 .text-right {
   text-align: right; }
 
+.pagination-container {
+  margin: 1em 0 1em; }
+
 .page-numbers {
   background: none;
   border: none;
-  color: #333333;
+  color: #969696;
   padding: 0.2em 0.5em;
   font-weight: bold;
-  text-decoration: none; }
+  text-decoration: none;
+  border-radius: 2px;
+  border: 1px solid #f8f8f8; }
+  .page-numbers a {
+    color: #969696; }
   .page-numbers .current {
     color: #5e0501; }
 
 a.page-numbers:hover, a.page-numbers:active {
   border: 1px solid #e6e6e6;
-  border-radius: 3px;
-  background: linear-gradient(white, #f0f0f0);
+  border-radius: 2px;
+  background: linear-gradient(white, #f8f8f8);
   text-shadow: 0px 1px 0px white;
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px rgba(0, 0, 0, 0.1); }
 
