@@ -25,6 +25,7 @@ echo '</p>';
 </article>
 <?php endwhile; endif; ?>
 
+<?php get_comments(); ?>
 </div>
 </div> <!-- End left content container -->
 <div class="right">

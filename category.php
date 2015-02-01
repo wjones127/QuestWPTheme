@@ -5,7 +5,7 @@
 <div class="left"> <!-- Left content -->
 <div class="col span12">
 
-<h1><?php single_cat_title(__('Category Archives For: '), true); ?> </h1>
+<h1><?php single_cat_title(__(''), true); ?> </h1>
 
 <div class="pagination-container center"> <?php echo paginate_links(); ?> </div>
 
