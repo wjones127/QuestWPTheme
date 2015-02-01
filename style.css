@@ -584,21 +584,24 @@ input[type='submit'] {
 /**************************   COMMENTS   *************************** */
 ol.commentlist {
   list-style-type: none; }
+  ol.commentlist ol {
+    list-style-type: none; }
   ol.commentlist li {
     border-left: 3px solid #5e0501;
-    padding-bottom: 1em; }
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    margin-bottom: 1.5em; }
   ol.commentlist .comment-meta {
     font-size: 0.8em; }
     ol.commentlist .comment-meta a {
       color: #646464; }
-  ol.commentlist .reply {
+  ol.commentlist .reply a {
     padding: 0.2em 0.5em 0.2em;
     border-radius: 2px;
-    border: 1px solid #f8f8f8; }
-    ol.commentlist .reply a {
-      color: #333333;
-      text-decoration: none; }
-    ol.commentlist .reply:hover {
+    border: 1px solid #f8f8f8;
+    color: #333333;
+    text-decoration: none; }
+    ol.commentlist .reply a:hover {
       border: 1px solid #e6e6e6;
       border-radius: 2px;
       background: linear-gradient(white, #f8f8f8);
