@@ -582,6 +582,9 @@ input[type='submit'] {
   font-size: 0.8em; }
 
 /**************************   COMMENTS   *************************** */
+.comments-container {
+  background: #333333; }
+
 ol.commentlist {
   list-style-type: none; }
   ol.commentlist ol {
@@ -590,7 +593,9 @@ ol.commentlist {
     border-left: 3px solid #5e0501;
     padding-bottom: 0.5em;
     padding-left: 1em;
-    margin-bottom: 1.5em; }
+    margin-bottom: 1.5em;
+    border-radius: 4px;
+    background: white; }
   ol.commentlist .comment-meta {
     font-size: 0.8em; }
     ol.commentlist .comment-meta a {
