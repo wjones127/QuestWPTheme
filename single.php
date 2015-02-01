@@ -25,6 +25,7 @@ echo '</p>';
 </article>
 <?php endwhile; endif; ?>
 
+<h3>Comments</h3>
 <?php comments_template(); ?>
 </div>
 </div> <!-- End left content container -->
