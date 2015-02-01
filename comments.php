@@ -59,12 +59,6 @@
 <label for="url"><small>Website</small></label></p>
 
 
-    <label>Or enter your OpenId URL:</label><br/>
-<?comments_with_openid(); ?>
-<br/>
-<input type="text" name="openid_identifier" id="openid_identifier"  class="textfield" tabindex="4" style="width:300px" />
-
-
 <?php endif; ?>
 
 
