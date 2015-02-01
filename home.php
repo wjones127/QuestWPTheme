@@ -47,7 +47,7 @@ endwhile;
 <!-- First 5 columns -->
 <div id="featured-news" class="col span5">
 <!-- News Stories -->
-<h3><a href="category.html">Latest News</a></h3>
+<h3><a href="/category/news/"">Latest News</a></h3>
 <ul class="story-list">
 <?php 
 rewind_posts();
@@ -99,7 +99,7 @@ endif; ?>
 
 
 <!-- Features Stories -->
-<h3><a href="category.html">Features</a></h3>
+<h3><a href="/category/features">Features</a></h3>
 <ul class="story-list">
 <?php 
 rewind_posts();
@@ -155,7 +155,7 @@ endif; ?>
 <div id="featured-letters" class="col span3">
 
 <!-- Letters -->
-<h3><a href="category.html">Letters</a></h3>
+<h3><a href="/category/opinion/">Letters</a></h3>
 <ul class="story-list">
 <?php 
 rewind_posts();
@@ -209,7 +209,7 @@ endif; ?>
 <div class="col span4 white">
 
 <!-- Entertainment Stories -->
-<h3><a href="category.html">Entertainment</a></h3>
+<h3><a href="/category/entertainment/">Entertainment</a></h3>
 <ul class="story-list">
 <?php 
 rewind_posts();
@@ -258,7 +258,7 @@ endif; ?>
 </ul>
 
 <!-- Creative Stories -->
-<h3><a href="category.html">Creative</a></h3>
+<h3><a href="/category/creative/">Creative</a></h3>
 <ul class="story-list">
 <?php 
 rewind_posts();
