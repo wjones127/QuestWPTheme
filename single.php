@@ -25,8 +25,11 @@ echo '</p>';
 </article>
 <?php endwhile; endif; ?>
 
+<div class="comments-container">
 <h3>Comments</h3>
 <?php comments_template(); ?>
+</div>
+
 </div>
 </div> <!-- End left content container -->
 <div class="right">
