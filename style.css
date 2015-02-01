@@ -85,7 +85,6 @@ article {
   background: none;
   display: inline-block;
   margin: 0.2em 0 0.2em;
-  border: none;
   color: #646464;
   padding: 0.2em 0.5em;
   font-weight: bold;
@@ -100,7 +99,6 @@ a.page-numbers:hover, a.page-numbers:active {
   border-radius: 2px;
   color: #333333;
   background: linear-gradient(white, #f8f8f8);
-  text-shadow: 0px 1px 0px white;
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px rgba(0, 0, 0, 0.1); }
 
 /**************************   LAYOUT   *************************** */
@@ -582,3 +580,26 @@ input[type='submit'] {
   margin-top: 0.1rem 0 1rem;
   padding: 0;
   font-size: 0.8em; }
+
+/**************************   COMMENTS   *************************** */
+ol.commentlist {
+  list-style-type: none; }
+  ol.commentlist li {
+    border-left: 3px solid #5e0501;
+    padding-bottom: 1em; }
+  ol.commentlist .comment-meta {
+    font-size: 0.8em; }
+    ol.commentlist .comment-meta a {
+      color: #646464; }
+  ol.commentlist .reply {
+    padding: 0.2em 0.5em 0.2em;
+    border-radius: 2px;
+    border: 1px solid #f8f8f8; }
+    ol.commentlist .reply a {
+      color: #333333;
+      text-decoration: none; }
+    ol.commentlist .reply:hover {
+      border: 1px solid #e6e6e6;
+      border-radius: 2px;
+      background: linear-gradient(white, #f8f8f8);
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px rgba(0, 0, 0, 0); }
