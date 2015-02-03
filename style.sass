@@ -28,6 +28,8 @@ body
   color: rgb(51,51,51)
   background: $reedred
   margin: 0
+  -webkit-font-smoothing: antialiased !important
+  -moz-osx-font-smoothing: grayscale
   margin-top: 50px
   font-size: 18px
   @media screen and (max-width: 767px)
@@ -61,8 +63,9 @@ article
     .subtitle
       font-size: 1.1em
   p
-    line-height: 1.5em
-    
+    line-height: 1.8em
+
+
 
 .featured-headline
   margin: 0.5em 0 0
@@ -604,12 +607,15 @@ ol.commentlist
   ol
     list-style-type: none
   li
-    border-left: 3px solid $reedred
+    border-left: 6px solid $reedred
     padding-bottom: 0.5em
-    padding-left: 1em
+    padding: 1em
     margin-bottom: 1.5em
+    margin-right: 1em
     border-radius: 4px
     background: white
+  .comment-body
+    padding-bottom: 1em
   .comment-meta
     font-size: 0.8em
     a
@@ -628,6 +634,17 @@ ol.commentlist
 
   
 
-
-
+/***************************   PRINTING   ****************************/
+@media print
+  .right
+    display: none
+  .header
+    display: none
+  .comments-container
+    display: none
+  .left
+    width: 100%
+    padding: 4em
+  body
+    font-size: 14px
 

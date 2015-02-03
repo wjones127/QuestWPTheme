@@ -18,6 +18,8 @@ body {
   color: #333333;
   background: #5e0501;
   margin: 0;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale;
   margin-top: 50px;
   font-size: 18px; }
   @media screen and (max-width: 767px) {
@@ -55,7 +57,7 @@ article {
       article .subtitle {
         font-size: 1.1em; } }
   article p {
-    line-height: 1.5em; }
+    line-height: 1.8em; }
 
 .featured-headline {
   margin: 0.5em 0 0; }
@@ -590,12 +592,15 @@ ol.commentlist {
   ol.commentlist ol {
     list-style-type: none; }
   ol.commentlist li {
-    border-left: 3px solid #5e0501;
+    border-left: 6px solid #5e0501;
     padding-bottom: 0.5em;
-    padding-left: 1em;
+    padding: 1em;
     margin-bottom: 1.5em;
+    margin-right: 1em;
     border-radius: 4px;
     background: white; }
+  ol.commentlist .comment-body {
+    padding-bottom: 1em; }
   ol.commentlist .comment-meta {
     font-size: 0.8em; }
     ol.commentlist .comment-meta a {
@@ -611,3 +616,21 @@ ol.commentlist {
       border-radius: 2px;
       background: linear-gradient(white, #f8f8f8);
       box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px rgba(0, 0, 0, 0); }
+
+/**************************   PRINTING   *************************** */
+@media print {
+  .right {
+    display: none; }
+
+  .header {
+    display: none; }
+
+  .comments-container {
+    display: none; }
+
+  .left {
+    width: 100%;
+    padding: 4em; }
+
+  body {
+    font-size: 14px; } }
