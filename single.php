@@ -14,11 +14,11 @@
 </p>
 <!-- Featured image -->
 <?php responsive_feature_image($post->ID, 'full-width'); ?>
-<?php if(get_post(get_post_thumbnail_id())->post_excerpt) {
-    echo '<p class="caption">';
-echo get_post(get_post_thumbnail_id())->post_excerpt;
-echo '</p>';
-} ?>
+<?php #if(get_post(get_post_thumbnail_id())->post_excerpt) {
+#	  echo '<p class="caption">';
+#	  echo get_post(get_post_thumbnail_id())->post_excerpt;
+#	  echo '</p>';
+#} ?>
 
 <?php the_content(); ?>
 
