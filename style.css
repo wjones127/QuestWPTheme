@@ -468,7 +468,6 @@ input[type='submit'] {
 
 .navigation-container {
   max-height: 800px;
-  transition: max-height 0.2s;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -479,8 +478,7 @@ input[type='submit'] {
       color: #333333;
       display: block; }
       .navigation-container.closed {
-        max-height: 0;
-        transition: max-height 0.2s; } }
+        max-height: 0; } }
 
 /**************************   FOOTER   *************************** */
 .footer ul {
