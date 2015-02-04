@@ -589,13 +589,30 @@ input[type='submit'] {
   border: 1px solid rgba(51, 51, 51, 0.1);
   text-decoration: none;
   display: inline-block; }
-  .button:hover {
+  .button:hover, .button:active {
     border: 1px solid rgba(51, 51, 51, 0.2);
     box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1); }
 
 .comments-container {
   background: #333333;
   margin: 0 -1em 0; }
+
+#reply {
+  background: white;
+  margin: 1em;
+  border-radius: 4px; }
+  #reply input {
+    max-width: calc(100% - 2em);
+    margin: 0 1em 0;
+    border-radius: 2px; }
+  #reply #submit {
+    font-family: Georgia, serif;
+    padding: 0.2em 0.5em 0.2em;
+    border-radius: 2px;
+    border: 1px solid rgba(51, 51, 51, 0.1); }
+    #reply #submit:hover, #reply #submit:active {
+      border: 1px solid rgba(51, 51, 51, 0.2);
+      box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1); }
 
 ol.commentlist {
   list-style-type: none;

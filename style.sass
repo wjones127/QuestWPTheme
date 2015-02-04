@@ -607,7 +607,7 @@ input[type='submit']
   border: 1px solid rgba(51,51,51,0.1)
   text-decoration: none
   display: inline-block
-  &:hover
+  &:hover, &:active
     border: 1px solid rgba(51,51,51, 0.2)
     box-shadow: inset 1px 1px 2px rgba(255,255,255, 0.2), 1px 1px 3px rgba(0,0,0,0.1)
 
@@ -615,6 +615,24 @@ input[type='submit']
 .comments-container
   background: rgb(51,51,51)
   margin: 0 -1em 0
+#reply
+  background: white
+  margin: 1em
+  border-radius: 4px
+  input
+    max-width: calc(100% - 2em)
+    margin: 0 1em 0
+    border-radius: 2px
+  #submit
+    font-family: Georgia, serif
+    padding: 0.2em 0.5em 0.2em
+    border-radius: 2px
+    border: 1px solid rgba(51,51,51,0.1)
+    &:hover, &:active
+      border: 1px solid rgba(51,51,51, 0.2)
+      box-shadow: inset 1px 1px 2px rgba(255,255,255, 0.2), 1px 1px 3px rgba(0,0,0,0.1)
+
+    
 ol.commentlist
   list-style-type: none
   padding: 0
