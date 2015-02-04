@@ -588,20 +588,25 @@ input[type='submit'] {
   box-sizing: border-box;
   padding: 0.2em 0.5em 0.2em;
   border-radius: 2px;
-  border: 1px solid rgba(51, 51, 51, 0.2);
-  text-decoration: none; }
+  border: 1px solid rgba(51, 51, 51, 0.1);
+  text-decoration: none;
+  display: inline-block; }
   .button:hover {
-    border: 1px solid #333333;
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(248, 248, 248, 0.4));
-    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px rgba(0, 0, 0, 0); }
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.1); }
 
 .comments-container {
-  background: #333333; }
+  background: #333333;
+  margin: 0 -1em 0; }
 
 ol.commentlist {
-  list-style-type: none; }
+  list-style-type: none;
+  padding: 0; }
+  ol.commentlist > li {
+    border-left: none; }
   ol.commentlist ol, ol.commentlist ul {
-    list-style-type: none; }
+    list-style-type: none;
+    padding-left: 0.2em; }
   ol.commentlist li {
     border-left: 6px solid #5e0501;
     padding-bottom: 0.5em;
