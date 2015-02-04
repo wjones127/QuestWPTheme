@@ -50,7 +50,7 @@
 <?php else : ?>
 
 <div>
-<label for="author">Name <?php if ($req) echo "(required)"; ?></label><
+<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
 <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 </div>
 
