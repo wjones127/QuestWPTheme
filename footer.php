@@ -49,8 +49,7 @@ window.menuButton = {
 	}
     },
 }
-// Next line to fix problem in mobile Safari
-$('#menu-button').addEventListener('click', function() {}, false);
+
 $('#menu-button').click(window.menuButton.switchStates);
 </script>
 
