@@ -78,7 +78,8 @@ article {
   font-size: 1.5em;
   text-align: center;
   font-style: italic;
-  font-weight: normal; }
+  font-weight: normal;
+  font-family: Georgia, serif; }
 
 .center {
   text-align: center; }
