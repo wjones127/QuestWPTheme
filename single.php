@@ -14,8 +14,8 @@
 $subtitle = get_post_meta($post->ID, "subtitle", true);
 if (subtitle != '')
 ?>
-<h3 class="subtitle"><?php echo $subtitle ?></h3>
-<?php endif?>
+<h3 class="subtitle"><?php echo $subtitle; ?></h3>
+<?php endif; ?>
 
 <p class="author center">
 <?php 
