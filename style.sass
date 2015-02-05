@@ -118,7 +118,6 @@ a.page-numbers:hover, a.page-numbers:active
   margin: 0
 
 .main-wrapper
-  background: #eee
   overflow: auto
 
 .center-container
@@ -129,7 +128,9 @@ a.page-numbers:hover, a.page-numbers:active
 .left
   width: 66.66%
   float: left
-  background: white
+  box-sizing: border-box
+  border-right: 1px solid #333
+  box-shadow: 0 0 5px rgba(0,0,0,0.2)
 
 .right
   width: 33.33%
@@ -685,8 +686,9 @@ ol.commentlist
   .comments-container
     display: none
   .left
-    width: 100%
-    padding: 4em
+    width: calc(100%-4em)
+    padding: 0 4em 0
+    margin: 0
   body
     font-size: 14px
 
