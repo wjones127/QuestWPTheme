@@ -1,5 +1,4 @@
 <?php if ( have_comments() ) : ?>
-<h4 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h4>
 
 <div class="navigation">
     <div class="alignleft"><?php previous_comments_link() ?></div>
