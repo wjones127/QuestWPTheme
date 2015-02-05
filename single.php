@@ -12,8 +12,9 @@
 <p class="author center"><?php the_author(); ?> |
 <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
 </p>
-<!-- Featured image -->
-<?php responsive_feature_image($post->ID, 'full-width'); ?>
+<?php # FEATURE IMAGE
+      # Need to remove responsive images first
+      #responsive_feature_image($post->ID, 'full-width'); ?>
 <?php #if(get_post(get_post_thumbnail_id())->post_excerpt) {
 #	  echo '<p class="caption">';
 #	  echo get_post(get_post_thumbnail_id())->post_excerpt;
