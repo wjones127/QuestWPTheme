@@ -45,7 +45,8 @@ h1 a, h2 a, h3 a, h4 a {
     text-decoration: underline; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto; }
 
 article {
   padding: 1rem; }
@@ -61,7 +62,7 @@ article {
   article img {
     max-width: 100%;
     height: auto; }
-  article div {
+  article .wp-caption {
     max-width: 100%; }
 
 .featured-headline {
