@@ -122,7 +122,7 @@ a.page-numbers:hover, a.page-numbers:active {
   width: 66.66%;
   float: left;
   box-sizing: border-box;
-  border-right: 1px solid #333333;
+  border-right: 1px solid #dddddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
 
 .right {
