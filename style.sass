@@ -615,7 +615,6 @@ input[type='submit']
 
 
 .comments-container
-  background: rgb(51,51,51)
   margin: 0 -1em 0
   padding: 0 2em 1em
   @media screen and (max-width: 767px)
@@ -646,8 +645,6 @@ input[type='submit']
 ol.commentlist
   list-style-type: none
   padding: 0
-  &> li
-    border-left: none
   ol, ul
     list-style-type: none
     padding-left: 0.2em
@@ -678,6 +675,9 @@ ol.commentlist
       border-radius: 2px
       background: linear-gradient(rgb(255,255,255), rgb(248,248,248))
       box-shadow: inset 0px 1px 0px rgba(255,255,255, 0.8), 0px 1px 3px rgba(0,0,0,0)
+  &> li
+    border-left: none
+    margin-left: 0
 
   
 
