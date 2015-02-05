@@ -110,7 +110,8 @@ a.page-numbers:hover, a.page-numbers:active {
   margin: 0; }
 
 .main-wrapper {
-  overflow: auto; }
+  overflow: auto;
+  background: white; }
 
 .center-container {
   margin: 0 auto;
