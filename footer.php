@@ -57,4 +57,6 @@ $('#menu-button').click(window.menuButton.switchStates);
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Lora:700' rel='stylesheet' type='text/css'>
 
+    <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
+
 </html>

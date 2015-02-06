@@ -12,16 +12,19 @@
 <?php 
 # Get the subtitle
 $subtitle = get_post_meta($post->ID, "subtitle", true);
-if (subtitle != '')
+if ($subtitle != '') {
 ?>
-<h3 class="subtitle"><?php echo $subtitle;; ?></h3>
+<h3 class="subtitle"><?php echo $subtitle; } ?></h3>
 
 <p class="author center">
 <?php 
-if (function_exists('coauthors_posts_links'))
-    coauthors_posts_links();
-else
-    the_author();; ?> |
+$guest_author = get_post_meta($post->ID, "guest-author", true);
+if ($guest_author != '') {
+    echo $guest_author; }
+elseif (function_exists('coauthors_posts_links')) {
+    coauthors_posts_links(); }
+else {
+    the_author();; } ?> |
 <?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
 </p>
 <?php # FEATURE IMAGE
