@@ -240,7 +240,15 @@ else {
     <h4><a href="<?php echo the_permalink() ?>">
 	<?php echo the_title() ?>
     </a></h4>
-    <p class="byline">by <?php the_author(); ?> | 
+    <p class="byline">by
+<?php 
+$guest_author = get_post_meta($post->ID, "guest-author", true);
+if ($guest_author != '') {
+    echo $guest_author; }
+elseif (function_exists('coauthors_posts_links')) {
+    coauthors_posts_links(); }
+else {
+    the_author();; } ?> |
 	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
     </p>
 </li>
