@@ -32,9 +32,9 @@ function quest_register_sidebars() {
 add_action( 'widgets_init', 'quest_register_sidebars' );
 
 # Add images sizes
-add_image_size('feat_large', '1200', '675');
-add_image_size('feat_medium', '720', '405');
-add_image_size('feat_small', '480', '270');
+add_image_size('feat_large', '1200', '675', true);
+add_image_size('feat_medium', '720', '405', true);
+add_image_size('feat_small', '480', '270', true);
 
 
 
