@@ -31,12 +31,18 @@ function quest_register_sidebars() {
 }
 add_action( 'widgets_init', 'quest_register_sidebars' );
 
+# Add images sizes
+add_image_size('feat_large', '1200', '675');
+add_image_size('feat_medium', '720', '405');
+add_image_size('feat_small', '480', '270');
+
+
 
 function responsive_feature_image($id, $class='') {
 if ( has_post_thumbnail() ) {
-    $small = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'thumbnail')[0]; 
-	$medium = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'medium')[0];
-	$large = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'large')[0];
+    $small = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'feat_small')[0]; 
+	$medium = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'feat_medium')[0];
+	$large = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'feat_large')[0];
 	$alt_text = get_post_meta($id, '_wp_attachment_image_alt', true);
     # echo '<img src="'.$small.'" ';
     # The script will take care of the src
