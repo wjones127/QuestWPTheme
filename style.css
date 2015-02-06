@@ -64,6 +64,8 @@ article {
     height: auto; }
   article .wp-caption {
     max-width: 100%; }
+  article li {
+    line-height: 1.8em; }
 
 .featured-headline {
   margin: 0.5em 0 0; }
