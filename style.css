@@ -112,6 +112,15 @@ a.page-numbers:hover, a.page-numbers:active {
   background: linear-gradient(white, #f8f8f8);
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px rgba(0, 0, 0, 0.1); }
 
+/***************************   TABLES  *************************** */
+article table {
+  border-spacing: 0; }
+  article table td {
+    border-bottom: 1px solid #eeeeee;
+    padding: 0.5em; }
+  article table th {
+    border-color: #5e0501; }
+
 /**************************   LAYOUT   *************************** */
 .section {
   clear: both;
