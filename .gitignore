@@ -4,3 +4,4 @@ Swipe/
 *~
 # Ignore the image
 *.jpg
+.sass-cache/
