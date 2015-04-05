@@ -25,7 +25,7 @@ elseif (function_exists('coauthors_posts_links')) {
     coauthors_posts_links(); }
 else {
     the_author();; } ?> |
-<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+<?php the_date(); ?>
 </p>
 <?php # FEATURE IMAGE
       # Need to remove responsive images first
