@@ -547,7 +547,7 @@ input[type='submit'] {
     width: 100%; }
   .featured-gallery .headline a {
     display: block;
-    text-shadow: 0 1px 0 black; }
+    text-shadow: 0 1px 3px black; }
   .featured-gallery img {
     width: 100%;
     margin: 0 auto; }
@@ -575,7 +575,8 @@ input[type='submit'] {
     display: inline-block;
     background: white;
     transition: opacity 0.2s;
-    opacity: 0.8; }
+    opacity: 0.8;
+    box-shadow: 0 0 2px #333333; }
     .counter div:hover {
       opacity: 1;
       cursor: pointer; }
