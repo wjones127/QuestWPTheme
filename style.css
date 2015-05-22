@@ -1,12 +1,12 @@
 /* Theme Name: Quest WP Theme
- * Theme URI: 
+ * Theme URI:
  * Author: Will Jones
- * Author URI: 
- * Description: Custom theme for the Quest website.
+ * Author URI:
+ * Description: Custom theme for the Reed College Quest website.
  * Version: 0.1
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Tags: responsive, newspaper, 
+ * Tags: responsive, newspaper,
  * Text Domain: questwptheme
  *
  * This theme, like WordPress, is licensed under the GPL.
@@ -19,12 +19,7 @@ body {
   background: #5e0501;
   margin: 0;
   -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale;
-  margin-top: 50px;
-  font-size: 18px; }
-  @media screen and (max-width: 767px) {
-    body {
-      font-size: 16px; } }
+  -moz-osx-font-smoothing: grayscale; }
 
 a, a:visited {
   color: #0a60aa; }
@@ -510,84 +505,42 @@ input[type='submit'] {
     padding: 1rem;
     margin: 0; }
 
-/*************************   GALLERY   ************************* */
-/* Gallery */
-.gallery-container {
-  padding: 1rem 0 2rem;
-  background: #0a0a0a;
-  color: white;
+/************************ FEATURED STORIES ************************ */
+.featured-stories > div {
+  background: white;
+  border-bottom: 1vh solid #5e0501; }
+.featured-stories .featured-headline-container {
+  background: white;
+  height: 15vh; }
+.featured-stories h2 {
+  font-size: 3em;
+  color: #333333;
+  position: relative;
+  top: -10vh;
+  height: 12vh;
+  border-top: 1vh solid #5e0501;
+  background: white; }
+.featured-stories figure {
   width: 100%;
-  padding: 0;
-  margin: 0;
+  height: 80vh;
+  max-height: 675px;
   overflow: hidden;
-  position: relative;
-  visbility: hidden; }
-
-.featured-gallery {
-  background: #0a0a0a;
-  display: block;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  clear: both;
-  position: relative;
-  overflow: hidden; }
-  .featured-gallery .slide {
+  margin: 0 auto; }
+  .featured-stories figure a {
     width: 100%;
-    box-sizing: border-box;
-    float: left;
+    padding-bottom: 56.25%;
     position: relative;
-    padding: 0;
-    max-height: 600px;
-    overflow: hidden; }
-  .featured-gallery .headline {
-    position: absolute;
-    bottom: 1em;
-    width: 100%; }
-  .featured-gallery .headline a {
+    background: #333333;
     display: block;
-    text-shadow: 0 1px 3px black; }
-  .featured-gallery img {
+    overflow: hidden; }
+  .featured-stories figure img {
     width: 100%;
-    margin: 0 auto; }
-  @media screen and (max-width: 767px) {
-    .featured-gallery .slide {
-      padding: 0; }
-    .featured-gallery .headline {
-      width: calc(100% - 2rem);
-      font-size: 1.4em; } }
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
 
-.counter {
-  width: 170px;
-  position: relative;
-  top: -30px;
-  padding: 0;
-  margin: 0 auto;
-  height: 0;
-  clear: both; }
-  .counter div {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    padding: 0;
-    margin: 10px 10px;
-    display: inline-block;
-    background: white;
-    transition: opacity 0.2s;
-    opacity: 0.8;
-    box-shadow: 0 0 2px #333333; }
-    .counter div:hover {
-      opacity: 1;
-      cursor: pointer; }
-  .counter .counter-on {
-    background: #5e0501;
-    transition: opacity 0.2s;
-    opacity: 1; }
-    .counter .counter-on:hover {
-      background: #5e0501; }
-
-/* positions for the featured images to be in */
 /*************************   IMAGES   ************************* */
 .full-width {
   width: 100%;

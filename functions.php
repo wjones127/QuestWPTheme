@@ -40,16 +40,16 @@ add_image_size('feat_small', '480', '270', true);
 
 function responsive_feature_image($id, $class='') {
 if ( has_post_thumbnail() ) {
-    $small = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'feat_small')[0]; 
-	$medium = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'feat_medium')[0];
-	$large = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'feat_large')[0];
+    $image_id = get_post_thumbnail_id($id);
+    $small = wp_get_attachment_image_src( $image_id, 'feat_small')[0];
+	$medium = wp_get_attachment_image_src( $image_id, 'feat_medium')[0];
+	$large = wp_get_attachment_image_src( $image_id, array(1200, 675))[0];
 	$alt_text = get_post_meta($id, '_wp_attachment_image_alt', true);
-    # echo '<img src="'.$small.'" ';
     # The script will take care of the src
     echo '<img ';
     echo 'class="'.$class.'" ';
     echo 'sizes="(min-width: 1200) 1200px, 100%" ';
-    echo 'srcset="'.$small.' 480w, '.$medium.' 720w, '.$large.'1200w"';
+    echo 'srcset="'.$small.' 480w, '.$medium.' 720w, '.$large.' 1200w"';
     echo 'alt="'.$alt_text.'">';
 }
 }
