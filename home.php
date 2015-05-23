@@ -13,8 +13,8 @@ while ( have_posts() ) : the_post();
 $image_id = get_post_thumbnail_id($post->ID);
 ?>
 
+<div class="featured-image"></div>
 
-<div>
     <div class="center-container">
 	<div class="featured-headline-container">
 	    <h2 class="headline featured-headline">
@@ -38,7 +38,7 @@ else {
 
 	</div>
     </div>
-</div>
+
 
 <?php
 # Adds the ID of the post to a list so we know which posts to not duplicate in later sections
@@ -432,7 +432,7 @@ endif; ?>
 <!-- css for the feature story image -->
 <style>
 @media only screen and (max-width: 767px) {
-    .featured-stories > div {
+    .featured-image {
 	background: url(
 	    "<?php echo wp_get_attachment_image_src( $image_id, 'feat_medium')[0] ?>"
 	) center center no-repeat;
@@ -440,7 +440,7 @@ endif; ?>
     }
 }
 @media only screen and (min-width: 768px) {
-    .featured-stories > div {
+    .featured-image {
 	background: url(
 	    "<?php echo wp_get_attachment_image_src( $image_id, 'feat_large')[0] ?>"
 	) center center no-repeat fixed;
