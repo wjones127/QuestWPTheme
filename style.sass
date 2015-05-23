@@ -515,42 +515,32 @@ input[type='submit']
 /************************* FEATURED STORIES *************************/
 .featured-stories
   > div
-    background: white
+    background: #333
     border-bottom: 1vh solid $reedred
+    height: 100vh
+    position: relative
+    @media screen and (max-width: 767px)
+      height: 60vh
+  .center-container
+    position: relative
+    height: 100vh
   .featured-headline-container
     background: white
-    height: 15vh
+    height: 20vh
+    position: absolute
+    bottom: 0
+    padding-bottom: 10vh
+    @media screen and (max-width: 767px)
+      height: 40vh
+      position: absolute
+      top: 60vh
   h2
     font-size: 3em
-    color: #333
-    position: relative
-    top: -10vh
-    height: 12vh
-    border-top: 1vh solid $reedred
-    background: white
-  figure
-    width: 100%
-    height: 80vh
-    max-height: 675px
-    overflow: hidden
-    margin: 0 auto
-    a
-      // 16:9 ratio
-      width: 100%
-      padding-bottom: 56.25%
-      position: relative
-      background: #333
-      display: block
-      overflow: hidden
-    img
-      width: 100%
-      position: absolute
-      top: 0
-      bottom: 0
-      left: 0
-      right: 0
-
-
+    color: $reedred
+    @media screen and (max-width: 767px)
+      font-size: 2em
+  .byline
+    text-align: center
 
 
 

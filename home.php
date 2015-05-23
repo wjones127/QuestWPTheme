@@ -6,24 +6,38 @@
 **************************************************************************** -->
 <section class="featured-stories">
 
-<?php query_posts( 'category_name=slider&posts_per_page=1' ); ?>
-<?php while ( have_posts() ) : the_post(); ?>
+<?php 
+query_posts( 'category_name=slider&posts_per_page=1' );
+while ( have_posts() ) : the_post(); 
+# Store the post id for getting the picture
+$image_id = get_post_thumbnail_id($post->ID);
+?>
+
 
 <div>
-    <figure>
-    <a href="<?php the_permalink(); ?>">
-	<?php responsive_feature_image($post->ID); ?>
-    </a>
-    </figure>
-    
-<div class="center-container featured-headline-container">
-    <h2 class="headline featured-headline">
-	<a href="<?php the_permalink(); ?>">
-	    <?php echo the_title(); ?>
-	</a>
-    </h2>
-</div>
+    <div class="center-container">
+	<div class="featured-headline-container">
+	    <h2 class="headline featured-headline">
+		<a href="<?php the_permalink(); ?>">
+		    <?php echo the_title(); ?>
+		</a>
+	    </h2>
 
+	    <p class="byline">by 
+<?php 
+$guest_author = get_post_meta($post->ID, "guest-author", true);
+if ($guest_author != '') {
+    echo $guest_author; }
+elseif (function_exists('coauthors_posts_links')) {
+    coauthors_posts_links(); }
+else {
+    the_author();; } ?> |
+
+	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
+	    </p>
+
+	</div>
+    </div>
 </div>
 
 <?php
@@ -34,11 +48,14 @@ endwhile;
 </section><!-- End .featured-stories -->
 
 
+<!-- ***************************************************************************
+                              STORIES BY CATEGORY
+**************************************************************************** -->
+
 <div class="main-wrapper center-container">
 <div class="section group">
+<div class="col span6">
 
-<!-- First 5 columns -->
-<div id="featured-news" class="col span5">
 <!-- News Stories -->
 <h3><a class="button" href="/category/news/"">Latest News</a></h3>
 <ul class="story-list">
@@ -111,6 +128,9 @@ endif; ?>
 </ul>
 
 
+</div>
+<div class="col span6">
+
 <!-- Features Stories -->
 <h3><a class="button" href="/category/features">Features</a></h3>
 <ul class="story-list">
@@ -178,12 +198,11 @@ endif;
 endwhile;
 endif; ?>
 </ul>
-</div> <!-- End the first column -->
 
-
-
-
-<div id="featured-letters" class="col span3">
+</div>
+</div><!-- End .section .group -->
+<div class="section group">
+<div class="col span6">
 
 <!-- Letters -->
 <h3><a class="button" href="/category/opinion/">Letters</a></h3>
@@ -251,10 +270,9 @@ endwhile;
 endif; ?>
 </ul>
 
-</div> <!-- End the second column -->
 
-
-<div class="col span4 white">
+</div>
+<div class="col span6">
 
 <!-- Entertainment Stories -->
 <h3><a class="button" href="/category/entertainment/">Entertainment</a></h3>
@@ -323,6 +341,14 @@ endwhile;
 endif; ?>
 </ul>
 
+
+</div>
+
+</div><!-- End .section .group -->
+
+<div class="section group">
+<div class="col span6">
+
 <!-- Creative Stories -->
 <h3><a class="button" href="/category/creative/">Creative</a></h3>
 <ul class="story-list">
@@ -389,10 +415,47 @@ endif;
 endwhile;
 endif; ?>
 </ul>
-</div> <!-- End the third column -->
 
-</div> <!-- .section .group -->
 
+</div>
+<div class="col span6">
+
+
+
+</div>
+</div> <!-- End .section .group -->
+
+
+
+
+
+<!-- css for the feature story image -->
+<style>
+@media only screen and (max-width: 767px) {
+    .featured-stories > div {
+	background: url(
+	    "<?php echo wp_get_attachment_image_src( $image_id, 'feat_medium')[0] ?>"
+	) center center no-repeat;
+	background-size: auto 100%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .featured-stories > div {
+	background: url(
+	    "<?php echo wp_get_attachment_image_src( $image_id, 'feat_large')[0] ?>"
+	) center center no-repeat fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+    }
+}
+
+.featured-stories > div {
+}
+
+</style>
 
 
 
