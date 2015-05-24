@@ -53,4 +53,109 @@ if ( has_post_thumbnail() ) {
     echo 'alt="'.$alt_text.'">';
 }
 }
+
+function getAuthors() {
+    # prints the author and human readable time difference
+    echo '<p class="byline">by ';
+    $guest_author = get_post_meta($post->ID, "guest-author", true);
+    if ($guest_author != '') echo $guest_author;
+    elseif (function_exists('coauthors_posts_links')) {
+	coauthors_posts_links(); }
+    else the_author();
+    echo ' | ';
+    echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago';
+    echo '</p>';
+}
+
+
+function pu_theme_menu() {
+    add_theme_page('Theme Options','Theme Options','manage_options',
+		   'theme-options.php', 'themePage');
+}
+
+add_action('admin_menu', 'pu_theme_menu');
+
+function themePage() {
+?>
+    <div class="section panel">
+	<h1>Custom Theme Options</h1>
+	<form method="post" enctype="multipart/form-data" action="options.php">
+            <?php 
+            settings_fields('pu_theme_options'); 
+            
+            do_settings_sections('pu_theme_options.php');
+            ?>
+            <p class="submit">  
+                <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />  
+            </p>  
+            
+	</form>
+    </div>
+    <?php
+}
+
+add_action('admin_init', 'pu_register_settings');
+
+function pu_register_settings()
+{
+    // Register the settings with Validation callback
+    register_setting( 'pu_theme_options', 'pu_theme_options', 'pu_validate_settings' );
+
+    // Add settings section
+    add_settings_section( 'pu_text_section', 'Text box Title', 'pu_display_section', 'pu_theme_options.php' );
+
+    // Create textbox field
+    $field_args = array(
+      'type'      => 'text',
+      'id'        => 'pu_textbox',
+      'name'      => 'pu_textbox',
+      'desc'      => 'List the slug names of categories to be displayed on the homepage, separated by commas.',
+      'std'       => '',
+      'label_for' => 'pu_textbox',
+      'class'     => 'css_class'
+    );
+
+    add_settings_field( 'homepage_categories', 'Categories to Display on Homepage',
+'pu_display_setting', 'pu_theme_options.php', 'pu_text_section', $field_args );
+}
+
+function pu_display_section($section){ 
+
+}
+
+function pu_display_setting($args)
+{
+    extract( $args );
+
+    $option_name = 'pu_theme_options';
+
+    $options = get_option( $option_name );
+
+    switch ( $type ) {  
+          case 'text':  
+              $options[$id] = stripslashes($options[$id]);  
+              $options[$id] = esc_attr( $options[$id]);  
+              echo "<input class='regular-text$class' type='text' id='$id' name='" . $option_name . "[$id]' value='$options[$id]' />";  
+              echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";  
+          break;  
+    }
+}
+
+function pu_validate_settings($input)
+{
+  foreach($input as $k => $v)
+  {
+    $newinput[$k] = trim($v);
+    
+    // Check the input is a letter or a number
+    if(!preg_match('/^[A-Z0-9 _,]*$/i', $v)) {
+      $newinput[$k] = '';
+    }
+  }
+
+  return $newinput;
+}
+
+
+
 ?>

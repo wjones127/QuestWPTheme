@@ -52,381 +52,98 @@ endwhile;
                               STORIES BY CATEGORY
 **************************************************************************** -->
 
+
+
+<?php
+# First we need to get a list of categories to display. This is set in the Theme
+# Options panel.
+
+$category_names = get_option('pu_theme_options')['pu_textbox'];
+$category_names = str_replace(' ', '', $category_names);
+$category_names = explode(',', $category_names);
+
+function categoryStories($category) {
+    # TODO : Need to get url and title of category
+    $cat_id = get_cat_ID($category);
+    $cat_url = get_category_link($cat_id);
+    $cat_name = get_cat_name($cat_id);
+?>
+    <h3><a class="button" href="<?php echo $cat_url; ?>">
+	<?php echo $cat_name; ?>
+    </a></h3>
+    <ul class="story-list">
+	<?php
+	rewind_posts();
+	$post_query = array(
+	    'post__not_in' => $do_not_duplicate,
+	    'posts_per_page' => 5,
+	    'category_name' => $category,
+	);
+	query_posts($post_query);
+	if (have_posts()):
+	 $post = $post[0];
+	$c = 0;
+	while (have_posts()) : the_post();
+	$c++;
+	?>
+	    <li class="story">
+		<h4><a href="<?php the_permalink(); ?>">
+		    <?php the_title(); ?>
+		</a></h4>
+	<?php
+	# Include the image with the first post, if it exists
+	if ($c == 1):
+	 if ( has_post_thumbnail( $post_id ) ) : 
+	 $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	?>
+	    <a href="<?php the_permalink(); ?>">
+		<?php responsive_feature_image($post->ID, 'full-width'); ?>
+	    </a>
+	    <?php
+	    endif;
+	    getAuthors();
+	    the_excerpt();
+	    else:
+getAuthors();
+	    endif; 
+?>
+	    </li>
+	<?php
+	endwhile;
+	endif;
+	?>
+    </ul>
+<?php
+}
+
+
+?>
+
 <div class="main-wrapper center-container">
-<div class="section group">
-<div class="col span6">
-
-<!-- News Stories -->
-<h3><a class="button" href="/category/news/"">Latest News</a></h3>
-<ul class="story-list">
 <?php 
-rewind_posts();
-$news = array(
-    'post__not_in' => $do_not_duplicate,
-    'posts_per_page' => 5,
-    'category_name' => news,
-);
-query_posts($news);
-if (have_posts()) :
-$post = $posts[0]; $c = 0;
-while (have_posts()) : the_post();
-# For the first post, have the image, if there is one
-$c++;
-if ( $c == 1) :
+foreach ($category_names as $i => $category) {
+    if ($i % 2 == 0) {
 ?>
-<li class="story">
-    <h4><a href="<?php the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <?php
-    # If there is a feature image for the post, show it
-    if ( has_post_thumbnail( $post_id ) ) : 
-     $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-    ?>
-	<a href="<?php the_permalink(); ?>">
-	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
-	</a>
-    <?php endif ?>
-    <p class="byline">by 
-
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-    <?php the_excerpt(); ?>
-</li>
-<?php else : ?>
-<li class="story">
-    <h4><a href="<?php the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <p class="byline">by
-
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-</li>
-<?php 
-endif;
-endwhile;
-endif; ?>
-</ul>
-
-
-</div>
-<div class="col span6">
-
-<!-- Features Stories -->
-<h3><a class="button" href="/category/features">Features</a></h3>
-<ul class="story-list">
-<?php 
-rewind_posts();
-$features = array(
-    'post__not_in' => $do_not_duplicate,
-    'posts_per_page' => 5,
-    'category_name' => features,
-);
-query_posts($features);
-if (have_posts()) :
-$post = $posts[0]; $c = 0;
-while (have_posts()) : the_post();
-# For the first post, have the image, if there is one
-$c++;
-if ( $c == 1) :
+    <div class="section group">
+	<div class="col span6">
+	    <?php categoryStories($category); ?>
+	</div>
+<?php
+# Need to make sure row is closed up if this is the last category
+if ($i == count($category_names) - 1) {
+    echo '</div>';
+}
+    } else { 
 ?>
-<li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <?php
-    # If there is a feature image for the post, show it
-    if ( has_post_thumbnail( $post_id ) ) : 
-    ?>
-	<a href="<?php the_permalink(); ?>">
-	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
-	</a>
-    <?php endif ?>
-    <p class="byline">by
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
- 
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-    <?php the_excerpt(); ?>
-</li>
-<?php else : ?>
-<li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <p class="byline">by 
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-</li>
-<?php 
-endif;
-endwhile;
-endif; ?>
-</ul>
-
-</div>
-</div><!-- End .section .group -->
-<div class="section group">
-<div class="col span6">
-
-<!-- Letters -->
-<h3><a class="button" href="/category/opinion/">Letters</a></h3>
-<ul class="story-list">
-<?php 
-rewind_posts();
-$letters = array(
-    'post__not_in' => $do_not_duplicate,
-    'posts_per_page' => 5,
-    'category_name' => opinion,
-);
-query_posts($letters);
-if (have_posts()) :
-$post = $posts[0]; $c = 0;
-while (have_posts()) : the_post();
-# For the first post, have the image, if there is one
-$c++;
-if ( $c == 1) :
-?>
-<li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <?php
-    # If there is a feature image for the post, show it
-    if ( has_post_thumbnail( $post_id ) ) :     ?>
-	<a href="<?php the_permalink(); ?>">
-	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
-	</a>
-    <?php endif ?>
-    <p class="byline">by 
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-    <?php the_excerpt(); ?>
-</li>
-<?php else : ?>
-<li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <p class="byline">by
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-</li>
-<?php 
-endif;
-endwhile;
-endif; ?>
-</ul>
-
-
-</div>
-<div class="col span6">
-
-<!-- Entertainment Stories -->
-<h3><a class="button" href="/category/entertainment/">Entertainment</a></h3>
-<ul class="story-list">
-<?php 
-rewind_posts();
-$entertainment = array(
-    'post__not_in' => $do_not_duplicate,
-    'posts_per_page' => 5,
-    'category_name' => entertainment,
-);
-query_posts($entertainment);
-if (have_posts()) :
-$post = $posts[0]; $c = 0;
-while (have_posts()) : the_post();
-# For the first post, have the image, if there is one
-$c++;
-if ( $c == 1) :
-?>
-<li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <?php
-    # If there is a feature image for the post, show it
-    if ( has_post_thumbnail( $post_id ) ) :   ?>
-	<a href="<?php the_permalink(); ?>">
-	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
-	</a>
-    <?php endif ?>
-    <p class="byline">by 
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-    <?php the_excerpt(); ?>
-</li>
-<?php else : ?>
-<li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <p class="byline">by 
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-</li>
-<?php 
-endif;
-endwhile;
-endif; ?>
-</ul>
-
-
-</div>
-
-</div><!-- End .section .group -->
-
-<div class="section group">
-<div class="col span6">
-
-<!-- Creative Stories -->
-<h3><a class="button" href="/category/creative/">Creative</a></h3>
-<ul class="story-list">
-<?php 
-rewind_posts();
-$creative = array(
-    'post__not_in' => $do_not_duplicate,
-    'posts_per_page' => 5,
-    'category_name' => creative,
-);
-query_posts($creative);
-if (have_posts()) :
-$post = $posts[0]; $c = 0;
-while (have_posts()) : the_post();
-# For the first post, have the image, if there is one
-$c++;
-if ( $c == 1) :
-?>
-<li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <?php
-    # If there is a feature image for the post, show it
-    if ( has_post_thumbnail( $post_id ) ) :   ?>
-	<a href="<?php the_permalink(); ?>">
-	    <?php responsive_feature_image($post->ID, 'full-width'); ?>
-	</a>
-    <?php endif ?>
-    <p class="byline">by 
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-    <?php the_excerpt(); ?>
-</li>
-<?php else : ?>
-<li class="story">
-    <h4><a href="<?php echo the_permalink() ?>">
-	<?php echo the_title() ?>
-    </a></h4>
-    <p class="byline">by 
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-    </p>
-</li>
-<?php 
-endif;
-endwhile;
-endif; ?>
-</ul>
-
-
-</div>
-<div class="col span6">
+	<div class="col span6">
+	    <?php categoryStories($category); ?>
+	</div>
+    </div>
+<?php } } ?>
 
 
 
-</div>
-</div> <!-- End .section .group -->
-
-
-
+<?php get_footer(); ?>
 
 
 <!-- css for the feature story image -->
@@ -456,7 +173,3 @@ endif; ?>
 }
 
 </style>
-
-
-
-<?php get_footer(); ?>
