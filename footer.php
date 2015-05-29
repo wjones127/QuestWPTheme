@@ -33,6 +33,7 @@ if ( has_nav_menu( 'footer' ) ) {
  document.createElement( "picture" );
 </script>
 <script src="<?php bloginfo('template_directory'); ?>/js/picturefill.min.js" async></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/dropcap.js/dropcap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
@@ -51,12 +52,30 @@ window.menuButton = {
 }
 
 $('#menu-button').click(window.menuButton.switchStates);
+
+// Adding drop cap to articles
+$(document).ready( function() {
+    first_paragraph = $('article p')[1];
+    open_tag = '<span class="dropcap">';
+    close_tag = '</span>';
+    first_letter = first_paragraph.innerHTML.substring(0,1);
+    paragraph_length = first_paragraph.length;
+    rest_of_paragraph = first_paragraph.innerHTML.substring(1);
+    first_paragraph.innerHTML = open_tag + first_letter + close_tag
+    + rest_of_paragraph;
+
+    // We retrieve our drop cap elements using a class selector...
+    var dropcaps = document.querySelectorAll(".dropcap");
+    // ...then give them a height of three lines.
+    // By default, the drop cap's baseline will also be the third paragraph line.
+    window.Dropcap.layout(dropcaps, 3);
+});
+
 </script>
 
 
 <!-- Google Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Lora:700' rel='stylesheet' type='text/css'>
-
-    <!-- <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds. -->
+<link href='http://fonts.googleapis.com/css?family=Lora:700,700italic' rel='stylesheet' type='text/css'>
+<?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds.
 
 </html>

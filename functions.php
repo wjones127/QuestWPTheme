@@ -55,13 +55,17 @@ if ( has_post_thumbnail() ) {
 }
 
 function getAuthors() {
-    # prints the author and human readable time difference
-    echo '<p class="byline">by ';
+    # echos the authors' names
     $guest_author = get_post_meta($post->ID, "guest-author", true);
     if ($guest_author != '') echo $guest_author;
     elseif (function_exists('coauthors_posts_links')) {
 	coauthors_posts_links(); }
     else the_author();
+}
+
+function getAuthorHTime() {
+    echo '<p class="byline">by ';
+    getAuthors();
     echo ' | ';
     echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago';
     echo '</p>';

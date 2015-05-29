@@ -23,18 +23,7 @@ $image_id = get_post_thumbnail_id($post->ID);
 		</a>
 	    </h2>
 
-	    <p class="byline">by 
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
-
-	<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?>
-	    </p>
+<?php getAuthorHTime(); ?>
 
 	</div>
     </div>
@@ -101,10 +90,10 @@ function categoryStories($category) {
 	    </a>
 	    <?php
 	    endif;
-	    getAuthors();
+	    getAuthorHTime();
 	    the_excerpt();
 	    else:
-getAuthors();
+        getAuthorHTime();
 	    endif; 
 ?>
 	    </li>

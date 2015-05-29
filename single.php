@@ -1,32 +1,31 @@
 <?php get_header(); ?>
 
 <div class="main-wrapper center-container">
-<div class="left"> <!-- Left content -->
-<div class="col span12">
+
+<div class="section group">
+<div class="col span9">
 
 <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
 <article>
-<h2 class="headline"><?php the_title(); ?></h2>
+<h1><?php the_title(); ?></h2>
 
 <?php 
 # Get the subtitle
 $subtitle = get_post_meta($post->ID, "subtitle", true);
 if ($subtitle != '') {
 ?>
-<h3 class="subtitle"><?php echo $subtitle; } ?></h3>
+<h2 class="subtitle"><?php echo $subtitle; } ?></h3>
 
-<p class="author center">
-<?php 
-$guest_author = get_post_meta($post->ID, "guest-author", true);
-if ($guest_author != '') {
-    echo $guest_author; }
-elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); }
-else {
-    the_author();; } ?> |
+<p class="altauthor center">
+<span>
+<?php getAuthors();?>
+</span>
+<span>
 <?php the_date(); ?>
+</span>
 </p>
+
 <?php # FEATURE IMAGE
       # Need to remove responsive images first
       #responsive_feature_image($post->ID, 'full-width'); ?>
@@ -36,7 +35,9 @@ else {
 #	  echo '</p>';
 #} ?>
 
+<div class="content-container">
 <?php the_content(); ?>
+</div>
 
 </article>
 <?php endwhile; endif; ?>
@@ -47,9 +48,7 @@ else {
 </div>
 
 </div>
-</div> <!-- End left content container -->
-<div class="right">
-<div class="col span12">
+<div class="col span3">
 <?php get_sidebar(); ?>
 </div>
 </div>

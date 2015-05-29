@@ -31,17 +31,39 @@ body
   -webkit-font-smoothing: antialiased !important
   -moz-osx-font-smoothing: grayscale
   margin-top: 50px
-  font-size: 18px
-  @media screen and (max-width: 767px)
-    font-size: 16px
+  font-size: 16px
+  @media screen and (min-width: 501px)
+    font-size: 18px
+
 a, a:visited
   color: $lightblue
+
+p
+  line-height: 1.5em
 
 h1, h2, h3, h4
   font-family: 'Lora', Georgia, serif
   font-weight: bold
   -webkit-font-smoothing: antialiased !important
   -moz-osx-font-smoothing: grayscale
+  margin: 1em 0 0.2em
+  text-align: center
+
+h1
+  font-size: 2em
+h2
+  font-size: 1.5em
+  color: $reedred
+.subtitle
+  font-size: 1.5em
+  text-align: center
+  font-style: italic
+  font-weight: normal
+  font-family: Georgia, serif
+  color: black
+  margin: 0.5em 0 0.2em
+h3
+  font-style: italic
 
 
 h1 a, h2 a, h3 a, h4 a
@@ -55,16 +77,9 @@ h1 a, h2 a, h3 a, h4 a
 img
   max-width: 100%
   height: auto
+
 article
   padding: 1rem
-  @media screen and (max-width: 767px)
-    padding: 0
-    .headline
-      font-size: 1.5em
-    .subtitle
-      font-size: 1.1em
-  p
-    line-height: 1.8em
   img
     max-width: 100%
     height: auto
@@ -72,8 +87,16 @@ article
     max-width: 100%
   li
     line-height: 1.8em
+  @media screen and (max-width: 767px)
+    padding: 0
+    .headline
+      font-size: 1.5em
+    .subtitle
+      font-size: 1.1em
 
-
+.content-container
+  max-width: 32em
+  margin: 0 auto
 
 .featured-headline
   margin: 0.5em 0 0
@@ -84,12 +107,6 @@ article
   font-size: 2.2em
   text-align: center
 
-.subtitle
-  font-size: 1.5em
-  text-align: center
-  font-style: italic
-  font-weight: normal
-  font-family: Georgia, serif
 
 .center
   text-align: center
@@ -163,28 +180,6 @@ article table
     display: none
 
 /* Background Colors */
-#featured-news
-  /* style for news stories on front page */
-  $border-width: 0.25
-  border: ($border-width * $gutter / 2) $darkblue solid
-  border-left: ($border-width * $gutter / 2) $darkblue solid
-  background: white
-  padding: 0
-  margin: 0
-  .story-list
-    padding: 0 ((1-$border-width) * $gutter / 2) 0
-  h3
-    a
-      color: white
-      font-size: 1.2em
-    background: $darkblue
-    margin: 0 0 0.5 * $gutter/2 0
-    padding: 0.75 * $gutter/2  ((1 - $border-width) * $gutter/2) 0.2 * $gutter/2
-#featured-letters
-  .story-list
-    h4
-      font-size: 1rem
-      
 .lightblue
   background: $lightblue
   color: white
@@ -239,6 +234,9 @@ article table
 .padded
   box-sizing: border-box
   padding: 0 2rem
+@media screen and (max-width: 1000px)
+  .span2, .span3, .span9, .span10
+    width: 100%
 @media screen and (max-width: 767px)
   .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span12
     width: 100%
@@ -251,6 +249,8 @@ article table
   list-style-type: none
   margin: 0
   padding: 0
+  h1, h2, h3, h4
+    text-align: left
   li
     box-sizing: border-box
     margin: 0
@@ -572,6 +572,8 @@ input[type='submit']
   &:hover, &:active
     border: 1px solid rgba(51,51,51, 0.2)
     box-shadow: inset 1px 1px 2px rgba(255,255,255, 0.2), 1px 1px 3px rgba(0,0,0,0.1)
+a.button
+  color: #333
 
 
 .comments-container
@@ -657,3 +659,14 @@ ol.commentlist
   body
     font-size: 14px
 
+.altauthor
+  span
+    background: $reedred
+    color: white
+    padding: 0.3em 0.7em
+    font-weight: bold
+    font-size: 0.9rem
+    &:first-child
+      border-radius: 0.4em 0 0 0.4em
+    &:last-child
+      border-radius: 0 0.4em 0.4em 0
