@@ -25,7 +25,7 @@ $maxwidth: 1200px
 /**************************   TYPOGRAPHY   **************************/
 body
   font-family: Georgia, serif
-  color: rgb(51,51,51)
+  color: rgb(20,20,20)
   background: $reedred
   margin: 0
   -webkit-font-smoothing: antialiased !important
@@ -659,14 +659,18 @@ ol.commentlist
   body
     font-size: 14px
 
+
 .altauthor
+  $auth-rad: 0.4em
+  $auth-col: #333
   span
-    background: $reedred
-    color: white
     padding: 0.3em 0.7em
-    font-weight: bold
-    font-size: 0.9rem
     &:first-child
-      border-radius: 0.4em 0 0 0.4em
+      background: $auth-col
+      color: white
+      border: 1px solid $auth-col
+      border-radius: $auth-rad 0 0 $auth-rad
     &:last-child
-      border-radius: 0 0.4em 0.4em 0
+      color: $auth-col
+      border-radius: 0 $auth-rad $auth-rad 0
+      border: 1px solid $auth-col

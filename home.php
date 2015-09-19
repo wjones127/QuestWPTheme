@@ -51,11 +51,11 @@ $category_names = get_option('pu_theme_options')['pu_textbox'];
 $category_names = str_replace(' ', '', $category_names);
 $category_names = explode(',', $category_names);
 
-function categoryStories($category) {
+function categoryStories($category_slug) {
     # TODO : Need to get url and title of category
-    $cat_id = get_cat_ID($category);
-    $cat_url = get_category_link($cat_id);
-    $cat_name = get_cat_name($cat_id);
+    $category = get_category_by_slug($category_slug);
+    $cat_url = get_category_link( $category->term_id );
+    $cat_name = $category->name;
 ?>
     <h3><a class="button" href="<?php echo $cat_url; ?>">
 	<?php echo $cat_name; ?>

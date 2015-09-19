@@ -15,7 +15,7 @@
 /*************************   TYPOGRAPHY   ************************* */
 body {
   font-family: Georgia, serif;
-  color: #333333;
+  color: #141414;
   background: #5e0501;
   margin: 0;
   -webkit-font-smoothing: antialiased !important;
@@ -666,12 +666,13 @@ ol.commentlist {
   body {
     font-size: 14px; } }
 .altauthor span {
-  background: #5e0501;
-  color: white;
-  padding: 0.3em 0.7em;
-  font-weight: bold;
-  font-size: 0.9rem; }
+  padding: 0.3em 0.7em; }
   .altauthor span:first-child {
+    background: #333333;
+    color: white;
+    border: 1px solid #333333;
     border-radius: 0.4em 0 0 0.4em; }
   .altauthor span:last-child {
-    border-radius: 0 0.4em 0.4em 0; }
+    color: #333333;
+    border-radius: 0 0.4em 0.4em 0;
+    border: 1px solid #333333; }

@@ -1,0 +1,26 @@
+{
+  "name": "dropcap.js",
+  "version": "1.0.0",
+  "description": "Beautiful drop caps for the web",
+  "main": "./dropcap.js",
+  "homepage": "https://github.com/adobe-webplatform/dropcap.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:adobe-webplatform/dropcap.git"
+  },
+  "authors": [
+    "Sylvain Galineau <galineau@adobe.com>"
+  ],
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

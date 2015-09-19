@@ -18,12 +18,7 @@ if ($subtitle != '') {
 <h2 class="subtitle"><?php echo $subtitle; } ?></h3>
 
 <p class="altauthor center">
-<span>
-<?php getAuthors();?>
-</span>
-<span>
-<?php the_date(); ?>
-</span>
+<span><?php getAuthors();?></span><span><?php the_date(); ?></span>
 </p>
 
 <?php # FEATURE IMAGE

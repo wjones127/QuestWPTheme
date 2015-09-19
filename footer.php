@@ -34,45 +34,33 @@ if ( has_nav_menu( 'footer' ) ) {
 </script>
 <script src="<?php bloginfo('template_directory'); ?>/js/picturefill.min.js" async></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/dropcap.js/dropcap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script>
 // Now for the stuff relating to the menu bar
 window.menuButton = {
+    menuButton: window.getElementById('menu-button'),
+    navContainer: window.getElementsByClass('navigation-container'),
     switchStates: function() {
-	if ($('#menu-button').hasClass('active-button')) {
-	    $('#menu-button').removeClass('active-button');
-	    $('.navigation-container').addClass('closed');
-	}
-	else {
-	    $('#menu-button').addClass('active-button');
-	    $('.navigation-container').removeClass('closed');
-	}
+        this.toggleClass(this.menuButton,
+                         'active-button',
+                         /(^|\s)active-button($|\s)/);
+        this.toggleClass(this.navContainer,
+                         'closed',
+                         /(^|\s)closed($|\s)/);
+    },
+    toggleClass: function(element, className, classRegex) {
+        var match = classRegex.exec(element.className);
+	    if (match === null) element.className += ' ' + className;
+        else element.className = element.className.replace(classRegex, '');
     },
 }
 
 $('#menu-button').click(window.menuButton.switchStates);
 
-// Adding drop cap to articles
-$(document).ready( function() {
-    first_paragraph = $('article p')[1];
-    open_tag = '<span class="dropcap">';
-    close_tag = '</span>';
-    first_letter = first_paragraph.innerHTML.substring(0,1);
-    paragraph_length = first_paragraph.length;
-    rest_of_paragraph = first_paragraph.innerHTML.substring(1);
-    first_paragraph.innerHTML = open_tag + first_letter + close_tag
-    + rest_of_paragraph;
-
-    // We retrieve our drop cap elements using a class selector...
-    var dropcaps = document.querySelectorAll(".dropcap");
-    // ...then give them a height of three lines.
-    // By default, the drop cap's baseline will also be the third paragraph line.
-    window.Dropcap.layout(dropcaps, 3);
-});
 
 </script>
 
+<script src="<?php bloginfo('template_directory'); ?>/js/add_dropcap.js"></script>
 
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Lora:700,700italic' rel='stylesheet' type='text/css'>
