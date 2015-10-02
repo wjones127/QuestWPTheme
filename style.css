@@ -14,22 +14,54 @@
 /**************************   COLORS   *************************** */
 /*************************   TYPOGRAPHY   ************************* */
 body {
-  font-family: Georgia, serif;
-  color: #141414;
-  background: #5e0501;
-  margin: 0;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale;
-  margin-top: 50px;
-  font-size: 16px; }
-  @media screen and (min-width: 501px) {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #222;
+    color: #141414;
+    background: #5e0501;
+    margin: 0;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: 50px;
+}
+p {
+    line-height: 1.555em;
+}
+@media screen and (max-width: 501px) {
     body {
-      font-size: 18px; } }
+      font-size: 16px;
+    }
+}
+h1 {
+    font-size: 3.375em;
+    margin-top: 1.5em;
+    font-family: 'Libre Baskerville', Baskerville, 'Times New Roman', Times, serif;
+}
+.subtitle {
+    font-style: italic;
+    font-weight: normal;
+    font-family: Baskerville, 'Times New Roman', Times, serif;
+    color: #444;
+}
+h2 {
+    font-family: 'Libre Baskerville', Baskerville, 'Times New Roman', Times, serif;
+    color: #5e0501;
+    font-size: 2.25em;
+}
+h3 {
+    font-weight: normal;
+    font-size: 1.5em;
+}
+h4 {
+    color: #666;
+    font-size: 1em;
+    font-family: 'Libre Baskerville', Baskerville, 'Times New Roman', Times, serif;
+}
 
 a, a:visited {
   color: #0a60aa; }
 
-p {
+/*p {
   line-height: 1.5em; }
 
 h1, h2, h3, h4 {
@@ -57,22 +89,26 @@ h2 {
   margin: 0.5em 0 0.2em; }
 
 h3 {
-  font-style: italic; }
+  font-style: italic; }*/
 
-h1 a, h2 a, h3 a, h4 a {
+/*h1 a, h2 a, h3 a, h4 a {
   color: inherit;
   text-decoration: none; }
   h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
     text-decoration: underline; }
   h1 a:active, h2 a:active, h3 a:active, h4 a:active {
     color: #105591;
-    text-decoration: underline; }
+    text-decoration: underline; }*/
 
 img {
   max-width: 100%;
   height: auto; }
 
 article {
+    max-width: 674px;
+}
+
+/*article {
   padding: 1rem; }
   article img {
     max-width: 100%;
@@ -87,9 +123,9 @@ article {
       article .headline {
         font-size: 1.5em; }
       article .subtitle {
-        font-size: 1.1em; } }
+        font-size: 1.1em; } }*/
 
-.content-container {
+/*.content-container {
   max-width: 32em;
   margin: 0 auto; }
 
@@ -101,7 +137,7 @@ article {
 .headline {
   font-size: 2.2em;
   text-align: center; }
-
+*/
 .center {
   text-align: center; }
 
@@ -665,6 +701,7 @@ ol.commentlist {
 
   body {
     font-size: 14px; } }
+
 .altauthor span {
   padding: 0.3em 0.7em; }
   .altauthor span:first-child {

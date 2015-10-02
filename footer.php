@@ -32,6 +32,7 @@ if ( has_nav_menu( 'footer' ) ) {
  // Picture element HTML5 shiv
  document.createElement( "picture" );
 </script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/picturefill.min.js" async></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/dropcap.js/dropcap.min.js"></script>
 
@@ -64,6 +65,7 @@ $('#menu-button').click(window.menuButton.switchStates);
 
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Lora:700,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:700' rel='stylesheet' type='text/css'>
 <?php echo get_num_queries(); ?> queries. <?php timer_stop(1); ?> seconds.
 
 </html>
